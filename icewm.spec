@@ -1,7 +1,7 @@
 %define name	icewm
 %define version	1.3.0
-%define theirversion 1.3-dev
-%define release %mkrel 0.1
+%define theirversion 1.3.0
+%define release %mkrel 1
 
 %define with_light 1
 %define with_gnome 1
@@ -46,7 +46,7 @@ Patch11:	icewmbg-1.2.14pre11-fixcrash.patch
 Patch12:	icewm-1.2.14pre11-background.patch
 Patch16:	icewm-1.3-dev-default-theme.patch
 Patch18:	icewm-1.2.26-more_virtual_desktops.patch
-Patch21:        icewm-1.3_dev-cvs_fixes.patch
+Patch21:        icewm-1.3.0-fix-build.patch
 
 BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 BuildRequires:  libx11-devel
@@ -117,7 +117,7 @@ options enabled.
 %patch12 -p1 -b .background
 %patch16 -p1 -b .default-theme
 %patch18 -p1 -b .more_desktop
-%patch21 -p0
+%patch21 -p1
 autoconf
 
 rm -f po/en.* #- en is not a valid locale
@@ -127,6 +127,8 @@ mv galaxy-icewm/Galaxy themes
 
 chmod -R a+rX themes
 find themes -type f | xargs chmod a-x
+
+rm -r themes/Urbicande
 
 %build
 
@@ -317,7 +319,6 @@ fi
 %{_datadir}/X11/%{name}/menu
 %{_datadir}/X11/%{name}/preferences
 %{_datadir}/X11/%{name}/toolbar
-%{_datadir}/X11/%{name}/taskbar2
 %{_datadir}/X11/%{name}/winoptions
 #%{_datadir}/X11/%{name}/programs
 %{_datadir}/X11/%{name}/themes/Galaxy
