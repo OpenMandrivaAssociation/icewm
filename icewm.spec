@@ -1,7 +1,7 @@
 %define name	icewm
 %define version	1.3.0
 %define theirversion 1.3.0
-%define release %mkrel 1
+%define release %mkrel 2
 
 %define with_light 1
 %define with_gnome 1
