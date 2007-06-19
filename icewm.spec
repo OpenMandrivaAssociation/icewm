@@ -47,6 +47,7 @@ Patch12:	icewm-1.2.14pre11-background.patch
 Patch16:	icewm-1.3-dev-default-theme.patch
 Patch18:	icewm-1.2.26-more_virtual_desktops.patch
 Patch21:        icewm-1.3.0-fix-build.patch
+Patch22:        icewm-1.3.0-gdkicon.patch
 
 BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 BuildRequires:  libx11-devel
@@ -118,6 +119,7 @@ options enabled.
 %patch16 -p1 -b .default-theme
 %patch18 -p1 -b .more_desktop
 %patch21 -p1
+%patch22 -p1 -b .gdkicon
 autoconf
 
 rm -f po/en.* #- en is not a valid locale
