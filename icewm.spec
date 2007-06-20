@@ -3,8 +3,8 @@
 %define theirversion 1.3.0
 %define release %mkrel 2
 
-%define with_light 1
-%define with_gnome 1
+%define with_light 0
+%define with_gnome 0
 %{?_with_no_light: %{expand: %%global with_light 0}}
 %{?_with_no_gnome: %{expand: %%global with_gnome 0}}
 
@@ -48,6 +48,7 @@ Patch16:	icewm-1.3-dev-default-theme.patch
 Patch18:	icewm-1.2.26-more_virtual_desktops.patch
 Patch21:        icewm-1.3.0-fix-build.patch
 Patch22:        icewm-1.3.0-gdkicon.patch
+Patch23:	icewm-1.3.0-kdeicon.patch
 
 BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 BuildRequires:  libx11-devel
@@ -120,6 +121,7 @@ options enabled.
 %patch18 -p1 -b .more_desktop
 %patch21 -p1
 %patch22 -p1 -b .gdkicon
+%patch23 -p1 -b .kdeicon
 autoconf
 
 rm -f po/en.* #- en is not a valid locale
