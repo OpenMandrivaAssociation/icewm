@@ -52,7 +52,6 @@ Patch23:	icewm-1.3.0-kdeicon.patch
 Patch24:	icewm-1.3.0-fdoicon.patch
 Patch25:	icewm-1.3.0-fix-focusing-on-raise.patch
 
-BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 BuildRequires:  libx11-devel
 BuildRequires:  libsm-devel
 BuildRequires:  libxrandr-devel
