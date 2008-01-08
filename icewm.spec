@@ -1,7 +1,7 @@
 %define name	icewm
 %define version	1.3.1
 %define theirversion 1.3.1
-%define release %mkrel 1
+%define release %mkrel 2
 
 %define with_light 1
 %define with_gnome 1
@@ -18,6 +18,7 @@ Version:	%{version}
 Release:	%{release}
 License:	LGPL
 Group:		Graphical desktop/Icewm
+Epoch:		1
 
 URL:		http://www.icewm.org/
 Source:		icewm-%{theirversion}.tar.bz2
@@ -63,7 +64,7 @@ BuildRequires:	xpm-devel
 BuildRequires:	gnome-desktop-devel
 BuildRequires:  libgdk_pixbuf2.0-devel
 BuildRequires:  linuxdoc-tools
-Requires:	mandrake_desk >= 7.1-1mdk, %{name}-light >= %{version}
+Requires:	mandrake_desk >= 7.1-1mdk, %{name}-light >= %epoch:%{version}
 Requires:	xlockmore
 # due to some theme move between icewm and icewm-light, urpmi needs help
 Conflicts:	icewm-light < 1.2.20
@@ -95,7 +96,7 @@ This is the light version with minimal features.
 %package gnome
 Summary:        A gnome compatible version of Icewm
 Group:          Graphical desktop/Icewm
-Requires:       %{name}-light = %{version}
+Requires:       %{name}-light = %epoch:%{version}
 
 %description gnome
 Window Manager for X Window System. Can emulate the look of Windows'95, OS/2
