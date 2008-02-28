@@ -1,7 +1,7 @@
 %define name	icewm
 %define version	1.3.1
 %define theirversion 1.3.1
-%define release %mkrel 2
+%define release %mkrel 3
 
 %define with_light 1
 %define with_gnome 1
@@ -23,7 +23,7 @@ Epoch:		1
 URL:		http://www.icewm.org/
 Source:		icewm-%{theirversion}.tar.bz2
 Source1:	mandrake.xpm.bz2
-Source2:	themes.tar.bz2
+Source2:	themes.tar.lzma
 Source3:	icewm.menu
 Source4:	icewm.menu-method
 Source5:	icewm-16.png
