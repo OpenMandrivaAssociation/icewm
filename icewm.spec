@@ -276,7 +276,6 @@ fi
 %{make_session}
 %endif
 
-#- standard
 %post
 for app in %{default_apps}; do
 	update-alternatives --install %{_bindir}/${app} ${app} %{_bindir}/${app} 20
