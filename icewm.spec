@@ -64,6 +64,7 @@ BuildRequires:	gettext
 BuildRequires:	libpcap-devel
 BuildRequires:	xpm-devel
 BuildRequires:	gnome-desktop-devel
+BuildRequires:	gnomeui2-devel
 BuildRequires:  libgdk_pixbuf2.0-devel
 BuildRequires:  linuxdoc-tools
 Requires:	mandrake_desk >= 7.1-1mdk, %{name}-light >= %epoch:%{version}
