@@ -1,7 +1,7 @@
 %define name	icewm
 %define version	1.3.3
 %define theirversion 1.3.1
-%define release %mkrel 4
+%define release %mkrel 5
 
 %define with_light 1
 %define with_gnome 1
@@ -52,6 +52,7 @@ Patch22:        icewm-1.3.0-gdkicon.patch
 Patch23:	icewm-1.3.0-kdeicon.patch
 Patch24:	icewm-1.3.0-fdoicon.patch
 Patch25:	icewm-1.3.0-fix-focusing-on-raise.patch
+Patch26:	icewm-1.3.1-helppath.patch
 # from Fedora
 Patch100:	icewm-configure.patch
 
@@ -130,6 +131,7 @@ options enabled.
 %patch23 -p1 -b .kdeicon
 %patch24 -p1 -b .fdoicon
 %patch25 -p1 -b .focus
+%patch26 -p1 -b .helppath
 %patch100 -p1 -b .configure
 autoconf
 
