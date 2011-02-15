@@ -1,7 +1,7 @@
 %define name	icewm
 %define version	1.3.3
 %define theirversion 1.3.1
-%define release %mkrel 5
+%define release %mkrel 6
 
 %define with_light 1
 %define with_gnome 1
@@ -70,6 +70,8 @@ BuildRequires:  libgdk_pixbuf2.0-devel
 BuildRequires:  linuxdoc-tools
 Requires:	mandrake_desk >= 7.1-1mdk, %{name}-light >= %epoch:%{version}
 Requires:	xlockmore
+Requires:	xdg-compliance-menu
+Requires:	xdg-compliance-autostart
 # due to some theme move between icewm and icewm-light, urpmi needs help
 Conflicts:	icewm-light < 1.2.20
 
