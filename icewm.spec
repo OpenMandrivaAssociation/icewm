@@ -189,47 +189,47 @@ echo "Standard Version"
 )
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %makeinstall_std -C default
 
 # --with-bindir doesn't work
-#install -d $RPM_BUILD_ROOT%{_bindir}
-#mv $RPM_BUILD_ROOT/usr/bin/* $RPM_BUILD_ROOT%{_bindir}
+#install -d %{buildroot}%{_bindir}
+#mv %{buildroot}/usr/bin/* %{buildroot}%{_bindir}
 
 %if %{with_light}
 for binary in %{light_apps}; do 
-   install light/src/${binary} $RPM_BUILD_ROOT%{_bindir}/${binary}-light
+   install light/src/${binary} %{buildroot}%{_bindir}/${binary}-light
 done
 %endif
 
 %if %{with_gnome}
 for binary in %{gnome_apps}; do 
-   install gnome/src/${binary} $RPM_BUILD_ROOT%{_bindir}/${binary}-gnome
+   install gnome/src/${binary} %{buildroot}%{_bindir}/${binary}-gnome
 done
 %endif
 
-cp -a default/themes $RPM_BUILD_ROOT%{_datadir}/X11/%{name}
+cp -a default/themes %{buildroot}%{_datadir}/X11/%{name}
 
 %if %mdkversion < 200700
-install -D -m644 %{SOURCE3} $RPM_BUILD_ROOT%{_menudir}/%{name}
-install -D -m755 %{SOURCE4} $RPM_BUILD_ROOT/etc/menu-methods/%{name}
+install -D -m644 %{SOURCE3} %{buildroot}%{_menudir}/%{name}
+install -D -m755 %{SOURCE4} %{buildroot}/etc/menu-methods/%{name}
 %else
-install -D -m755 %{SOURCE12} $RPM_BUILD_ROOT%{_sysconfdir}/menu.d/%{name}
+install -D -m755 %{SOURCE12} %{buildroot}%{_sysconfdir}/menu.d/%{name}
 %endif
 
 # icon
-install -D -m644 %{SOURCE6} $RPM_BUILD_ROOT%{_iconsdir}/%{name}.png
-install -D -m644 %{SOURCE5} $RPM_BUILD_ROOT%{_miconsdir}/%{name}.png
-install -D -m644 %{SOURCE7} $RPM_BUILD_ROOT%{_liconsdir}/%{name}.png
+install -D -m644 %{SOURCE6} %{buildroot}%{_iconsdir}/%{name}.png
+install -D -m644 %{SOURCE5} %{buildroot}%{_miconsdir}/%{name}.png
+install -D -m644 %{SOURCE7} %{buildroot}%{_liconsdir}/%{name}.png
 
 excludes_patt="\(themes/Galaxy\|icewm/icons/\(app_\|xterm_\)\)"
-(cd $RPM_BUILD_ROOT%{_datadir} ; find X11/%{name}/{icons,themes} ! -type d -printf "%{_datadir}/%%p\n") | grep -v "$excludes_patt" > other.list
-(cd $RPM_BUILD_ROOT%{_datadir} ; find X11/%{name}/{icons,themes}   -type d -printf "%%%%dir %{_datadir}/%%p\n") | grep -v "$excludes_patt" >> other.list
+(cd %{buildroot}%{_datadir} ; find X11/%{name}/{icons,themes} ! -type d -printf "%{_datadir}/%%p\n") | grep -v "$excludes_patt" > other.list
+(cd %{buildroot}%{_datadir} ; find X11/%{name}/{icons,themes}   -type d -printf "%%%%dir %{_datadir}/%%p\n") | grep -v "$excludes_patt" >> other.list
 
 # wmsession support
-mkdir -p $RPM_BUILD_ROOT/etc/X11/wmsession.d/
-cat << EOF > $RPM_BUILD_ROOT/etc/X11/wmsession.d/07IceWM
+mkdir -p %{buildroot}/etc/X11/wmsession.d/
+cat << EOF > %{buildroot}/etc/X11/wmsession.d/07IceWM
 NAME=IceWM
 ICON=icewm-wmsession.xpm
 EXEC=/usr/bin/starticewm
@@ -238,7 +238,7 @@ SCRIPT:
 exec /usr/bin/starticewm
 EOF
 
-install -m 755 %{SOURCE8} $RPM_BUILD_ROOT%{_bindir}/starticewm
+install -m 755 %{SOURCE8} %{buildroot}%{_bindir}/starticewm
 
 # Dadou - 1.0.9-0.pre1.5mdk - Change default background color for MDK color
 perl -pi -e "s!# DesktopBackgroundColor=.*!DesktopBackgroundColor=\"\"!" %buildroot%{_datadir}/X11/icewm/preferences
@@ -247,7 +247,7 @@ perl -pi -e "s!# DesktopBackgroundColor=.*!DesktopBackgroundColor=\"\"!" %buildr
 cat %{name}.lang >> other.list
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %if %{with_light}
 %post light
