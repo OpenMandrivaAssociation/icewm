@@ -1,0 +1,90 @@
+--- icewm-1.3-dev/lib/keys.in.pix	2003-05-17 19:12:16.000000000 +0200
++++ icewm-1.3-dev/lib/keys.in	2006-11-21 09:05:17.000000000 +0100
+@@ -9,13 +9,9 @@
+ # You'll have to omit XK_ prefixs and to replace XF86XK_ prefixes by
+ # XF86. Valid modifiers are Alt, Ctrl, Shift, Meta, Super and Hyper.
+ #
+-key "Alt+Ctrl+t"		xterm
+ key "Alt+Ctrl+f"		fte
+ key "Alt+Ctrl+e"		nedit
+ key "Alt+Ctrl+g"		gimp
+-key "Alt+Ctrl+n"		netscape -noraise -remote openBrowser
+-key "Alt+Ctrl+b"		netscape -noraise -remote openBookmarks
+-key "Alt+Ctrl+m"		netscape -noraise -remote openURL(mailto:,new-window) 
+ 
+ key "Alt+Ctrl+KP_Divide"	aumix -v -5		# lower volume
+ key "Alt+Ctrl+KP_Multiply"	aumix -v +5		# raise volume
+@@ -27,10 +23,8 @@
+ key "XF86Standby"		killall -QUIT icewm
+ key "XF86AudioLowerVolume"	aumix -v -5
+ key "XF86AudioRaiseVolume"	aumix -v +5
+-key "XF86AudioMute"		aumix -v 0
++key "XF86AudioMute"		sh -c "if aumix -v q | grep -q 'vol 0,'; then aumix -L > /dev/null; else aumix -S ; aumix -v 0; fi"
+ key "XF86AudioPlay"		cdplay play 1
+ key "XF86AudioStop"		cdplay stop
+-key "XF86HomePage"		netscape -noraise -remote openHomepage
+-key "XF86Mail"			netscape -noraise -remote openURL(mailto:,new-window) 
+-key "XF86Search"		netscape -noraise -remote openURL(http://www.google.com/)
++key "XF86Search"		www-browser http://www.google.com/
+ key "XF86Eject"			eject
+--- icewm-1.3-dev/lib/toolbar.in.pix	2003-05-17 19:12:17.000000000 +0200
++++ icewm-1.3-dev/lib/toolbar.in	2006-11-21 09:05:17.000000000 +0100
+@@ -4,6 +4,7 @@
+ # since modifications to this file will be discarded when you
+ # (re)install icewm.
+ #
+-prog XTerm xterm xterm
+-prog FTE fte fte
+-prog Netscape netscape netscape
++prog Terminal terminals_section.png xvt
++prog Emacs emacs.png emacs
++prog Browser web_browser_section.png www-browser
++prog MCC drakconf.png mcc
+--- icewm-1.3-dev/src/yprefs.h.pix	2006-08-24 22:16:15.000000000 +0200
++++ icewm-1.3-dev/src/yprefs.h	2006-11-21 09:06:22.000000000 +0100
+@@ -32,7 +32,7 @@
+ #ifdef CONFIG_XFREETYPE
+ XIV(bool, haveXft,                              true)
+ #endif
+-XSV(const char *, iconPath,                     0)
++XSV(const char *, iconPath,                     "/usr/share/icons:/usr/share/icons/hicolor:/usr/share/icons/locolor:/usr/share/icons/crystalsvg:/usr/share/X11/icewm/icons")
+ #define CONFIG_DEFAULT_THEME "icedesert/default.theme"
+ XSV(const char *, themeName,                    CONFIG_DEFAULT_THEME)
+ 
+--- icewm-1.3-dev/src/default.h.pix	2006-08-24 22:16:13.000000000 +0200
++++ icewm-1.3-dev/src/default.h	2006-11-21 09:05:17.000000000 +0100
+@@ -139,27 +139,27 @@
+ #endif
+ 
+ XSV(const char *, mailBoxPath,                  0)
+-XSV(const char *, mailCommand,                  "xterm -name pine -title PINE -e pine")
+-XSV(const char *, mailClassHint,                "pine.XTerm")
++XSV(const char *, mailCommand,                  "xvt -T MUTT -e mutt")
++XSV(const char *, mailClassHint,                "mutt.XTerm")
+ XSV(const char *, newMailCommand,               0)
+ XSV(const char *, lockCommand,                  0)
+ XSV(const char *, clockCommand,                 "xclock -name icewm -title Clock")
+ XSV(const char *, clockClassHint,               "icewm.XClock")
+ XSV(const char *, runDlgCommand,                0)
+ XSV(const char *, openCommand,                  0)
+-XSV(const char *, terminalCommand,              "xterm")
++XSV(const char *, terminalCommand,              "xvt")
+ XSV(const char *, logoutCommand,                0)
+ XSV(const char *, logoutCancelCommand,          0)
+-XSV(const char *, shutdownCommand,              0)
+-XSV(const char *, rebootCommand,                0)
++XSV(const char *, shutdownCommand,              "halt")
++XSV(const char *, rebootCommand,                "reboot")
+ XIV(int, taskBarCPUDelay,                       500)
+ XIV(int, taskBarNetSamples,                     20)
+ XIV(int, taskBarNetDelay,                       500)
+-XSV(const char *, cpuCommand,                   "xterm -name top -title Process\\ Status -e top")
++XSV(const char *, cpuCommand,                   "xvt -T Process\\ Status -e top")
+ XSV(const char *, cpuClassHint,                 "top.XTerm")
+ XSV(const char *, netCommand,                   "xterm -name netstat -title 'Network Status' -e netstat -c")
+ XSV(const char *, netClassHint,                 "netstat.XTerm")
+-XSV(const char *, netDevice,                    "ppp0 eth0")
++XSV(const char *, netDevice,                    "eth1 eth0 ppp0")
+ XSV(const char *, addressBarCommand,            0)
+ #ifdef CONFIG_I18N
+ XSV(const char *, fmtTime,                      "%X")

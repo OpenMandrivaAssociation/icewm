@@ -1,0 +1,18 @@
+--- icewm-1.2.5/configure.in.lib64	2003-01-05 19:43:20.000000000 +0100
++++ icewm-1.2.5/configure.in	2003-01-09 14:16:06.000000000 +0100
+@@ -693,13 +693,13 @@
+ dnl ======================================================== Some path stuff ===
+ dnl
+ AC_ARG_WITH(libdir,
+-  [  --with-libdir=path      Default data directory (\$datadir/icewm)],
++  [  --with-libdir=path      Default data directory (\$prefix/lib/X11/icewm)],
+   [ if test x"$with_libdir" = x -o "$with_libdir" = "yes"; then
+       AC_MSG_ERROR([Invalid usage of --with-libdir argument])
+     else
+       libdatadir=$with_libdir
+     fi ],
+-  [ libdatadir='${datadir}/icewm' ])
++  [ libdatadir='${prefix}/lib/X11/icewm' ])
+ 
+ AC_ARG_WITH(cfgdir,
+   [  --with-cfgdir=path      System configuration directory (/etc/icewm)],

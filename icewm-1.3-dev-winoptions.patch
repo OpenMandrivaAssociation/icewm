@@ -1,0 +1,73 @@
+--- icewm-1.3-dev/lib/winoptions.in.pix	2006-08-25 19:40:10.000000000 +0200
++++ icewm-1.3-dev/lib/winoptions.in	2006-11-21 09:09:41.000000000 +0100
+@@ -4,7 +4,70 @@
+ # since modifications to this file will be discarded when you
+ # (re)install icewm.
+ 
++Nautilus.icon: nautilus
++licq.icon: licq
++xchat.icon: xchat
++emacs.icon: emacs
++gnozip.icon: gnozip
++gnomba.icon: gnomba
++icepref.icon: icepref
++kdevelop.icon: /usr/share/icons/hicolor/16x16/apps/kdevelop.png
++kword.icon: /usr/share/icons/hicolor/16x16/apps/kword.png
++xedit.icon: xedit
++menudrake.icon: menudrake.xpm
++xvt.icon: xconsole.xpm
++Terminal.icon: xconsole.xpm
++xfontsel.icon: xfontsel
++kiconedit.icon: /usr/share/icons/hicolor/16x16/apps/kiconedit.png
++kcharselect.icon: /usr/share/icons/hicolor/16x16/apps/kcharselect.png
++xcalc.icon: xcalq
++serdrake.icon: /usr/share/icons/mini/userdrake.png
++ee.icon: ee
++gnorpm.icon: gnorpm
++kfax.icon: /usr/share/icons/hicolor/16x16/apps/kfax.png
++kpaint.icon: /usr/share/icons/hicolor/16x16/apps/kpaint.png
++klpq.icon: /usr/share/icons/hicolor/16x16/apps/klpq.png
++kljettool.icon: /usr/share/icons/hicolor/16x16/apps/kljettool.png
++
++userpasswd.icon: userpasswd.xpm
++#userpasswd.layer: OnTop 
++kdepasswd.icon: userpasswd.xpm
++#kdepasswd.layer: OnTop
++balsa.icon: balsa
++
++#This controls Wharf geometry for 1024x768
++#licq.Wharf.dBorder: 0
++#licq.Wharf.ignoreTaskBar: 1
++#licq.Wharf.ignoreQuickSwitch: 1
++#licq.Wharf.dTitleBar: 0
++#licq.Wharf.layer: AboveDock
++#licq.Wharf.allWorkspaces: 1
++#licq.Wharf.geometry: +870+790
++
++gnorpm.icon: gnorpm
++toolbox.Gimp.icon: gimp
++image_window.Gimp.icon: gimp
++gimp.Gimp.icon: gimp
++script-fu.Script-fu.icon: gimp
++gFTP.icon: gftp
++gcombust.icon: gcombust
++Glade.icon: glade
++xtraceroute.icon: xtraceroute
++GTKtalog.icon: gtktalog
++usbview.icon: usbview
++grip.icon: grip
++gnucash.icon: gnucash
++xditview.icon: xditview
++kwuftpd.icon: /usr/share/icons/hicolor/16x16/apps/kcontrol.png
++aterm.icon: xconsole.xpm
++eog.icon: eog
++gv.icon: gv
++gnome-telnet.icon: gnome-telnet
++kmail.icon: /usr/share/icons/hicolor/16x16/apps/kmail.png
++Gaim.noFocusOnAppRaise: 1
++licq.noFocusOnAppRaise: 1
+ xterm.icon: xterm
++
+ rxvt.icon: xterm
+ nxterm.icon: xterm
+ fte.icon: fte

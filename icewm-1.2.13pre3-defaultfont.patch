@@ -1,0 +1,35 @@
+diff -urN icewm-1.2.13pre3/src/yconfig.h icewm-1.2.13pre3-modified/src/yconfig.h
+--- icewm-1.2.13pre3/src/yconfig.h	2003-09-14 19:13:54.000000000 +0200
++++ icewm-1.2.13pre3-modified/src/yconfig.h	2003-09-16 15:01:05.000000000 +0200
+@@ -26,23 +26,16 @@
+ #ifndef __YCONFIG_H__
+ #define __YCONFIG_H__
+ 
+-#if CONFIG_XFREETYPE >= 2
+-#define FONT(pt) "-*-sans-medium-r-*-*-*-" #pt "-*-*-*-*-*-*"
+-#define BOLDFONT(pt) "-*-sans-bold-r-*-*-*-" #pt "-*-*-*-*-*-*"
+-#define TTFONT(pt) "-*-monospace-medium-r-*-*-*-" #pt "-*-*-*-*-*-*"
+-#define BOLDTTFONT(pt) "-*-monospace-bold-r-*-*-*-" #pt "-*-*-*-*-*-*"
+-#else
+ #ifdef FONTS_ADOBE
+-#define FONT(pt) "-b&h-lucida-medium-r-*-*-*-" #pt "-*-*-*-*-*-*"
+-#define BOLDFONT(pt) "-b&h-lucida-bold-r-*-*-*-" #pt "-*-*-*-*-*-*"
+-#define TTFONT(pt) "-b&h-lucidatypewriter-medium-r-*-*-*-" #pt "-*-*-*-*-*-*"
+-#define BOLDTTFONT(pt) "-b&h-lucidatypewriter-bold-r-*-*-*-" #pt "-*-*-*-*-*-*"
++#define FONT(pt) "-b&h-lucida-medium-r-*-*-*-" #pt "-*-*-*-*-*-*,-*--16-*"
++#define BOLDFONT(pt) "-b&h-lucida-bold-r-*-*-*-" #pt "-*-*-*-*-*-*,-*--16-*"
++#define TTFONT(pt) "-b&h-lucidatypewriter-medium-r-*-*-*-" #pt "-*-*-*-*-*-*,-*--16-*"
++#define BOLDTTFONT(pt) "-b&h-lucidatypewriter-bold-r-*-*-*-" #pt "-*-*-*-*-*-*,-*--16-*"
+ #else
+-#define FONT(pt) "-adobe-helvetica-medium-r-*-*-*-" #pt "-*-*-*-*-*-*"
+-#define BOLDFONT(pt) "-adobe-helvetica-bold-r-*-*-*-" #pt "-*-*-*-*-*-*"
+-#define TTFONT(pt) "-adobe-courier-medium-r-*-*-*-" #pt "-*-*-*-*-*-*"
+-#define BOLDTTFONT(pt) "-adobe-courier-bold-r-*-*-*-" #pt "-*-*-*-*-*-*"
+-#endif
++#define FONT(pt) "-misc-fixed-medium-r-normal-*-*-" #pt "-*-*-*-*-16-*"
++#define BOLDFONT(pt) "-misc-fixed-bold-r-normal-*-*-" #pt "-*-*-*-*-16-*"
++#define TTFONT(pt) "-adobe-courier-medium-r-*-*-*-" #pt "-*-*-*-*-*-*,-*--16-*"
++#define BOLDTTFONT(pt) "-adobe-courier-bold-r-*-*-*-" #pt "-*-*-*-*-*-*,-*--16-*"
+ #endif
+ 
+ #define kfShift  1

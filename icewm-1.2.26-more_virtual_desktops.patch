@@ -1,0 +1,270 @@
+--- icewm-1.2.26/src/bindkey.h.pix	2006-04-27 09:13:40.000000000 +0200
++++ icewm-1.2.26/src/bindkey.h	2006-04-27 09:15:07.000000000 +0200
+@@ -65,6 +65,18 @@
+ #define defgKeySysWorkspace10           '0', kfAlt, "Alt+0"
+ #define defgKeySysWorkspace11           '-', kfAlt, "Alt+bracketleft"
+ #define defgKeySysWorkspace12           '=', kfAlt, "Alt+bracketright"
++#define defgKeySysWorkspace13           '=', kfAlt, "Alt+bracketright"
++#define defgKeySysWorkspace14           '=', kfAlt, "Alt+bracketright"
++#define defgKeySysWorkspace15           '=', kfAlt, "Alt+bracketright"
++#define defgKeySysWorkspace16           '=', kfAlt, "Alt+bracketright"
++#define defgKeySysWorkspace17           '=', kfAlt, "Alt+bracketright"
++#define defgKeySysWorkspace18           '=', kfAlt, "Alt+bracketright"
++#define defgKeySysWorkspace19           '=', kfAlt, "Alt+bracketright"
++#define defgKeySysWorkspace20           '=', kfAlt, "Alt+bracketright"
++#define defgKeySysWorkspace21           '=', kfAlt, "Alt+bracketright"
++#define defgKeySysWorkspace22           '=', kfAlt, "Alt+bracketright"
++#define defgKeySysWorkspace23           '=', kfAlt, "Alt+bracketright"
++#define defgKeySysWorkspace24           '=', kfAlt, "Alt+bracketright"
+ #define defgKeySysWorkspace1TakeWin     '1', kfAlt+kfCtrl+kfShift, "Alt+Ctrl+Shift+1"
+ #define defgKeySysWorkspace2TakeWin     '2', kfAlt+kfCtrl+kfShift, "Alt+Ctrl+Shift+2"
+ #define defgKeySysWorkspace3TakeWin     '3', kfAlt+kfCtrl+kfShift, "Alt+Ctrl+Shift+3"
+@@ -77,6 +89,18 @@
+ #define defgKeySysWorkspace10TakeWin    '0', kfAlt+kfCtrl+kfShift, "Alt+Ctrl+Shift+0"
+ #define defgKeySysWorkspace11TakeWin    '-', kfAlt+kfCtrl+kfShift, "Alt+Ctrl+Shift+bracketleft"
+ #define defgKeySysWorkspace12TakeWin    '=', kfAlt+kfCtrl+kfShift, "Alt+Ctrl+Shift+bracketright"
++#define defgKeySysWorkspace13TakeWin    '=', kfAlt+kfCtrl+kfShift, "Alt+Ctrl+Shift+bracketright"
++#define defgKeySysWorkspace14TakeWin    '=', kfAlt+kfCtrl+kfShift, "Alt+Ctrl+Shift+bracketright"
++#define defgKeySysWorkspace15TakeWin    '=', kfAlt+kfCtrl+kfShift, "Alt+Ctrl+Shift+bracketright"
++#define defgKeySysWorkspace16TakeWin    '=', kfAlt+kfCtrl+kfShift, "Alt+Ctrl+Shift+bracketright"
++#define defgKeySysWorkspace17TakeWin    '=', kfAlt+kfCtrl+kfShift, "Alt+Ctrl+Shift+bracketright"
++#define defgKeySysWorkspace18TakeWin    '=', kfAlt+kfCtrl+kfShift, "Alt+Ctrl+Shift+bracketright"
++#define defgKeySysWorkspace19TakeWin    '=', kfAlt+kfCtrl+kfShift, "Alt+Ctrl+Shift+bracketright"
++#define defgKeySysWorkspace20TakeWin    '=', kfAlt+kfCtrl+kfShift, "Alt+Ctrl+Shift+bracketright"
++#define defgKeySysWorkspace21TakeWin    '=', kfAlt+kfCtrl+kfShift, "Alt+Ctrl+Shift+bracketright"
++#define defgKeySysWorkspace22TakeWin    '=', kfAlt+kfCtrl+kfShift, "Alt+Ctrl+Shift+bracketright"
++#define defgKeySysWorkspace23TakeWin    '=', kfAlt+kfCtrl+kfShift, "Alt+Ctrl+Shift+bracketright"
++#define defgKeySysWorkspace24TakeWin    '=', kfAlt+kfCtrl+kfShift, "Alt+Ctrl+Shift+bracketright"
+ #define defgKeySysTileVertical          XK_F2, kfAlt+kfShift, "Alt+Shift+F2"
+ #define defgKeySysTileHorizontal        XK_F3, kfAlt+kfShift, "Alt+Shift+F3"
+ #define defgKeySysCascade               XK_F4, kfAlt+kfShift, "Alt+Shift+F4"
+@@ -180,6 +204,18 @@
+ DEF_WMKEY(gKeySysWorkspace10);
+ DEF_WMKEY(gKeySysWorkspace11);
+ DEF_WMKEY(gKeySysWorkspace12);
++DEF_WMKEY(gKeySysWorkspace13);
++DEF_WMKEY(gKeySysWorkspace14);
++DEF_WMKEY(gKeySysWorkspace15);
++DEF_WMKEY(gKeySysWorkspace16);
++DEF_WMKEY(gKeySysWorkspace17);
++DEF_WMKEY(gKeySysWorkspace18);
++DEF_WMKEY(gKeySysWorkspace19);
++DEF_WMKEY(gKeySysWorkspace20);
++DEF_WMKEY(gKeySysWorkspace21);
++DEF_WMKEY(gKeySysWorkspace22);
++DEF_WMKEY(gKeySysWorkspace23);
++DEF_WMKEY(gKeySysWorkspace24);
+ DEF_WMKEY(gKeySysWorkspace1TakeWin);
+ DEF_WMKEY(gKeySysWorkspace2TakeWin);
+ DEF_WMKEY(gKeySysWorkspace3TakeWin);
+@@ -192,6 +228,18 @@
+ DEF_WMKEY(gKeySysWorkspace10TakeWin);
+ DEF_WMKEY(gKeySysWorkspace11TakeWin);
+ DEF_WMKEY(gKeySysWorkspace12TakeWin);
++DEF_WMKEY(gKeySysWorkspace13TakeWin);
++DEF_WMKEY(gKeySysWorkspace14TakeWin);
++DEF_WMKEY(gKeySysWorkspace15TakeWin);
++DEF_WMKEY(gKeySysWorkspace16TakeWin);
++DEF_WMKEY(gKeySysWorkspace17TakeWin);
++DEF_WMKEY(gKeySysWorkspace18TakeWin);
++DEF_WMKEY(gKeySysWorkspace19TakeWin);
++DEF_WMKEY(gKeySysWorkspace20TakeWin);
++DEF_WMKEY(gKeySysWorkspace21TakeWin);
++DEF_WMKEY(gKeySysWorkspace22TakeWin);
++DEF_WMKEY(gKeySysWorkspace23TakeWin);
++DEF_WMKEY(gKeySysWorkspace24TakeWin);
+ DEF_WMKEY(gKeySysTileVertical);
+ DEF_WMKEY(gKeySysTileHorizontal);
+ DEF_WMKEY(gKeySysCascade);
+--- icewm-1.2.26/src/default.h.pix	2006-04-27 09:13:40.000000000 +0200
++++ icewm-1.2.26/src/default.h	2006-04-27 09:13:40.000000000 +0200
+@@ -420,6 +420,18 @@
+     OKV("KeySysWorkspace11",                    gKeySysWorkspace11,             ""),
+     OKV("KeySysWorkspace12",                    gKeySysWorkspace12,             ""),
+     OKV("KeySysWorkspace1TakeWin",              gKeySysWorkspace1TakeWin,       ""),
++    OKV("KeySysWorkspace13",                     gKeySysWorkspace13,              ""),
++    OKV("KeySysWorkspace14",                     gKeySysWorkspace14,              ""),
++    OKV("KeySysWorkspace15",                     gKeySysWorkspace15,              ""),
++    OKV("KeySysWorkspace16",                     gKeySysWorkspace16,              ""),
++    OKV("KeySysWorkspace17",                     gKeySysWorkspace17,              ""),
++    OKV("KeySysWorkspace18",                     gKeySysWorkspace18,              ""),
++    OKV("KeySysWorkspace18",                     gKeySysWorkspace19,              ""),
++    OKV("KeySysWorkspace20",                     gKeySysWorkspace20,              ""),
++    OKV("KeySysWorkspace21",                     gKeySysWorkspace21,              ""),
++    OKV("KeySysWorkspace22",                    gKeySysWorkspace22,             ""),
++    OKV("KeySysWorkspace23",                    gKeySysWorkspace23,             ""),
++    OKV("KeySysWorkspace24",                    gKeySysWorkspace24,             ""),
+     OKV("KeySysWorkspace2TakeWin",              gKeySysWorkspace2TakeWin,       ""),
+     OKV("KeySysWorkspace3TakeWin",              gKeySysWorkspace3TakeWin,       ""),
+     OKV("KeySysWorkspace4TakeWin",              gKeySysWorkspace4TakeWin,       ""),
+@@ -431,6 +443,18 @@
+     OKV("KeySysWorkspace10TakeWin",             gKeySysWorkspace10TakeWin,      ""),
+     OKV("KeySysWorkspace11TakeWin",             gKeySysWorkspace11TakeWin,      ""),
+     OKV("KeySysWorkspace12TakeWin",             gKeySysWorkspace12TakeWin,      ""),
++    OKV("KeySysWorkspace13TakeWin",             gKeySysWorkspace13TakeWin,      ""),
++    OKV("KeySysWorkspace14TakeWin",             gKeySysWorkspace14TakeWin,      ""),
++    OKV("KeySysWorkspace15TakeWin",             gKeySysWorkspace15TakeWin,      ""),
++    OKV("KeySysWorkspace16TakeWin",             gKeySysWorkspace16TakeWin,      ""),
++    OKV("KeySysWorkspace17TakeWin",             gKeySysWorkspace17TakeWin,      ""),
++    OKV("KeySysWorkspace18TakeWin",             gKeySysWorkspace18TakeWin,      ""),
++    OKV("KeySysWorkspace19TakeWin",             gKeySysWorkspace19TakeWin,      ""),
++    OKV("KeySysWorkspace20TakeWin",             gKeySysWorkspace20TakeWin,      ""),
++    OKV("KeySysWorkspace21TakeWin",             gKeySysWorkspace21TakeWin,      ""),
++    OKV("KeySysWorkspace22TakeWin",             gKeySysWorkspace22TakeWin,      ""),
++    OKV("KeySysWorkspace23TakeWin",             gKeySysWorkspace23TakeWin,      ""),
++    OKV("KeySysWorkspace24TakeWin",             gKeySysWorkspace24TakeWin,      ""),
+     OKV("KeySysTileVertical",                   gKeySysTileVertical,            ""),
+     OKV("KeySysTileHorizontal",                 gKeySysTileHorizontal,          ""),
+     OKV("KeySysCascade",                        gKeySysCascade,                 ""),
+--- icewm-1.2.26/src/wmmgr.cc.pix	2006-04-16 18:12:31.000000000 +0200
++++ icewm-1.2.26/src/wmmgr.cc	2006-04-27 09:13:40.000000000 +0200
+@@ -157,6 +157,19 @@
+     GRAB_WMKEY(gKeySysWorkspace11);
+     GRAB_WMKEY(gKeySysWorkspace12);
+ 
++    GRAB_WMKEY(gKeySysWorkspace13);
++    GRAB_WMKEY(gKeySysWorkspace14);
++    GRAB_WMKEY(gKeySysWorkspace15);
++    GRAB_WMKEY(gKeySysWorkspace16);
++    GRAB_WMKEY(gKeySysWorkspace17);
++    GRAB_WMKEY(gKeySysWorkspace18);
++    GRAB_WMKEY(gKeySysWorkspace19);
++    GRAB_WMKEY(gKeySysWorkspace20);
++    GRAB_WMKEY(gKeySysWorkspace21);
++    GRAB_WMKEY(gKeySysWorkspace22);
++    GRAB_WMKEY(gKeySysWorkspace23);
++    GRAB_WMKEY(gKeySysWorkspace24);
++
+     GRAB_WMKEY(gKeySysWorkspace1TakeWin);
+     GRAB_WMKEY(gKeySysWorkspace2TakeWin);
+     GRAB_WMKEY(gKeySysWorkspace3TakeWin);
+@@ -169,6 +182,19 @@
+     GRAB_WMKEY(gKeySysWorkspace10TakeWin);
+     GRAB_WMKEY(gKeySysWorkspace11TakeWin);
+     GRAB_WMKEY(gKeySysWorkspace12TakeWin);
++    
++    GRAB_WMKEY(gKeySysWorkspace13TakeWin);
++    GRAB_WMKEY(gKeySysWorkspace14TakeWin);
++    GRAB_WMKEY(gKeySysWorkspace15TakeWin);
++    GRAB_WMKEY(gKeySysWorkspace16TakeWin);
++    GRAB_WMKEY(gKeySysWorkspace17TakeWin);
++    GRAB_WMKEY(gKeySysWorkspace18TakeWin);
++    GRAB_WMKEY(gKeySysWorkspace19TakeWin);
++    GRAB_WMKEY(gKeySysWorkspace20TakeWin);
++    GRAB_WMKEY(gKeySysWorkspace21TakeWin);
++    GRAB_WMKEY(gKeySysWorkspace22TakeWin);
++    GRAB_WMKEY(gKeySysWorkspace23TakeWin);
++    GRAB_WMKEY(gKeySysWorkspace24TakeWin);
+ 
+     GRAB_WMKEY(gKeySysTileVertical);
+     GRAB_WMKEY(gKeySysTileHorizontal);
+@@ -379,6 +405,54 @@
+         XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
+         switchToWorkspace(11, false);
+         return true;
++    } else if (IS_WMKEY(k, vm, gKeySysWorkspace13)) {
++        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
++        switchToWorkspace(12, false);
++        return true;
++    } else if (IS_WMKEY(k, vm, gKeySysWorkspace14)) {
++        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
++        switchToWorkspace(13, false);
++        return true;
++    } else if (IS_WMKEY(k, vm, gKeySysWorkspace15)) {
++        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
++        switchToWorkspace(14, false);
++        return true;
++    } else if (IS_WMKEY(k, vm, gKeySysWorkspace16)) {
++        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
++        switchToWorkspace(15, false);
++        return true;
++    } else if (IS_WMKEY(k, vm, gKeySysWorkspace17)) {
++        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
++        switchToWorkspace(16, false);
++        return true;
++    } else if (IS_WMKEY(k, vm, gKeySysWorkspace18)) {
++        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
++        switchToWorkspace(17, false);
++        return true;
++    } else if (IS_WMKEY(k, vm, gKeySysWorkspace19)) {
++        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
++        switchToWorkspace(18, false);
++        return true;
++    } else if (IS_WMKEY(k, vm, gKeySysWorkspace20)) {
++        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
++        switchToWorkspace(19, false);
++        return true;
++    } else if (IS_WMKEY(k, vm, gKeySysWorkspace21)) {
++        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
++        switchToWorkspace(20, false);
++        return true;
++    } else if (IS_WMKEY(k, vm, gKeySysWorkspace22)) {
++        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
++        switchToWorkspace(21, false);
++        return true;
++    } else if (IS_WMKEY(k, vm, gKeySysWorkspace23)) {
++        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
++        switchToWorkspace(22, false);
++        return true;
++    } else if (IS_WMKEY(k, vm, gKeySysWorkspace24)) {
++        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
++        switchToWorkspace(23, false);
++        return true;
+     } else if (IS_WMKEY(k, vm, gKeySysWorkspace1TakeWin)) {
+         XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
+         switchToWorkspace(0, true);
+@@ -427,6 +501,54 @@
+         XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
+         switchToWorkspace(11, true);
+         return true;
++    } else if (IS_WMKEY(k, vm, gKeySysWorkspace13TakeWin)) {
++        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
++        switchToWorkspace(12, true);
++        return true;
++    } else if (IS_WMKEY(k, vm, gKeySysWorkspace14TakeWin)) {
++        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
++        switchToWorkspace(13, true);
++        return true;
++    } else if (IS_WMKEY(k, vm, gKeySysWorkspace15TakeWin)) {
++        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
++        switchToWorkspace(14, true);
++        return true;
++    } else if (IS_WMKEY(k, vm, gKeySysWorkspace16TakeWin)) {
++        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
++        switchToWorkspace(15, true);
++        return true;
++    } else if (IS_WMKEY(k, vm, gKeySysWorkspace17TakeWin)) {
++        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
++        switchToWorkspace(16, true);
++        return true;
++    } else if (IS_WMKEY(k, vm, gKeySysWorkspace18TakeWin)) {
++        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
++        switchToWorkspace(17, true);
++        return true;
++    } else if (IS_WMKEY(k, vm, gKeySysWorkspace19TakeWin)) {
++        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
++        switchToWorkspace(18, true);
++        return true;
++    } else if (IS_WMKEY(k, vm, gKeySysWorkspace20TakeWin)) {
++        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
++        switchToWorkspace(19, true);
++        return true;
++    } else if (IS_WMKEY(k, vm, gKeySysWorkspace21TakeWin)) {
++        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
++        switchToWorkspace(20, true);
++        return true;
++    } else if (IS_WMKEY(k, vm, gKeySysWorkspace22TakeWin)) {
++        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
++        switchToWorkspace(21, true);
++        return true;
++    } else if (IS_WMKEY(k, vm, gKeySysWorkspace23TakeWin)) {
++        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
++        switchToWorkspace(22, true);
++        return true;
++    } else if (IS_WMKEY(k, vm, gKeySysWorkspace24TakeWin)) {
++        XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
++        switchToWorkspace(23, true);
++        return true;
+     } else if (IS_WMKEY(k, vm, gKeySysTileVertical)) {
+         XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
+         wmapp->actionPerformed(actionTileVertical, 0);
