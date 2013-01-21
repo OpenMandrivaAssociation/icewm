@@ -47,6 +47,7 @@ Patch12:	icewm-1.2.14pre11-background.patch
 Patch18:	icewm-1.2.26-more_virtual_desktops.patch
 Patch25:	icewm-1.3.0-fix-focusing-on-raise.patch
 Patch27:	icewm-1.3.3-gcc.patch
+Patch28:	icewm-1.3.7-fontconfig_link.patch
 
 BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 BuildRequires:  libx11-devel
@@ -124,6 +125,7 @@ options enabled.
 %patch18 -p1 -b .more_desktop
 %patch25 -p1 -b .focus
 %patch27 -p0 -b .gcc
+%patch28 -p1 -b .fontconfig_link
 autoconf
 
 rm -f po/en.* #- en is not a valid locale
