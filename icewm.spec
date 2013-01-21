@@ -69,6 +69,7 @@ BuildRequires:	libgnomeui2-devel
 BuildRequires:  libgdk_pixbuf2.0-devel
 BuildRequires:  linuxdoc-tools
 BuildRequires:  pkgconfig(xft)
+BuildRequires:  pkgconfig(gdk-pixbuf-xlib-2.0)
 Requires:	mandrake_desk >= 7.1-1mdk, %{name}-light >= %epoch:%{version}
 Requires:	xlockmore
 Requires:	xdg-compliance-menu
