@@ -53,6 +53,7 @@ Patch23:	icewm-1.3.0-kdeicon.patch
 Patch24:	icewm-1.3.0-fdoicon.patch
 Patch25:	icewm-1.3.0-fix-focusing-on-raise.patch
 Patch26:	icewm-1.3.1-helppath.patch
+Patch27:	icewm-1.3.3-gcc.patch
 # from Fedora
 Patch100:	icewm-configure.patch
 
@@ -137,6 +138,7 @@ options enabled.
 %patch24 -p1 -b .fdoicon
 %patch25 -p1 -b .focus
 %patch26 -p1 -b .helppath
+%patch27 -p0 -b .gcc
 %patch100 -p1 -b .configure
 autoconf
 
