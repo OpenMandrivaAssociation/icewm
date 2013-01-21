@@ -1,0 +1,33 @@
+#!/usr/sbin/install-menu
+compat="menu-1"
+
+!include menu.h
+
+function findicon($filename, $defaulticon)= \
+    ifeqelse($filename, "", $defaulticon, \
+    ifelsefile($filename, $filename, \
+    ifelsefile("/usr/share/icons/mini/" $filename, "/usr/share/icons/mini/" $filename, \
+    ifelsefile("/usr/share/icons/" $filename, "/usr/share/icons/" $filename, \
+    ifelsefile("/usr/share/icons/hicolor/16x16/apps/" $filename, "/usr/share/icons/hicolor/16x16/apps/" $filename, \
+    ifelsefile("/usr/share/icons/crystalsvg/16x16/apps/" $filename, "/usr/share/icons/crystalsvg/16x16/apps/" $filename, \
+    ifelsefile("/usr/share/icons/kdeclassic/16x16/apps/" $filename, "/usr/share/icons/kdeclassic/16x16/apps/" $filename, \
+    ifelsefile("/usr/share/icons/locolor/16x16/apps/" $filename, "/usr/share/icons/locolor/16x16/apps/" $filename, \
+    $defaulticon))))))))\
+
+supported
+  x11=	"  prog \"" translate(lang(), title()) "\" " findicon($icon, "-") " " $command"\n"
+  text= "  prog \"" translate(lang(), title()) "\" " findicon($icon, "-") " " term() "\n"
+  wm=   "  restart \"" translate(lang(), title()) "\" " findicon($icon, "-") " " $command"\n"
+  icewm="  prog \"" translate(lang(), title()) "\" " findicon($icon, "-") " " $command"\n"
+endsupported
+
+startmenu=ifneq($title,"Mandriva Linux menu",ifroot("menu \"" translate(lang(), $title) "\" " findicon($icon, "default_section.png") " {\n","menu \"" translate(lang(),$title) "\" " findicon($icon, "default_section.png") " {\n"))
+endmenu=ifneq($title,"Mandriva Linux menu","}\n")
+genmenu="menu"
+submenutitle=""
+#submenutitle="  menu \"" $title "\" folder {\n"
+preoutput="prog \"Terminal\" /usr/share/icons/mini/terminals_section.png /usr/bin/xvt\n"
+rootprefix="/usr/share/X11/icewm/"
+mainmenutitle="Mandriva Linux menu"
+treewalk="(M)"
+userprefix=".icewm"
