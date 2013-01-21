@@ -56,10 +56,10 @@ BuildRequires:	autoconf2.5
 BuildRequires:	gettext
 BuildRequires:	libpcap-devel
 BuildRequires:	xpm-devel
-#BuildRequires:	gnome-desktop-devel
+BuildRequires:	gnome-desktop-devel
 BuildRequires:	libgnomeui2-devel
 BuildRequires:  libgdk_pixbuf2.0-devel
-#BuildRequires:  linuxdoc-tools
+BuildRequires:  linuxdoc-tools
 BuildRequires:  pkgconfig(xft)
 BuildRequires:  pkgconfig(gdk-pixbuf-xlib-2.0)
 BuildRequires:  x11-proto-devel
