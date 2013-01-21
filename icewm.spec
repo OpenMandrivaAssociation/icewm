@@ -1,7 +1,7 @@
 %define name	icewm
-%define version	1.3.3
-%define theirversion 1.3.1
-%define release 8
+%define version	1.3.7
+%define theirversion 1.3.7
+%define release 1
 
 %define with_light 1
 %define with_gnome 1
@@ -21,7 +21,7 @@ Group:		Graphical desktop/Icewm
 Epoch:		1
 
 URL:		http://www.icewm.org/
-Source:		icewm-%{theirversion}.tar.bz2
+Source:		icewm-%{theirversion}.tar.gz
 Source1:	mandrake.xpm.bz2
 Source2:	themes.tar.lzma
 Source3:	icewm.menu
@@ -31,7 +31,6 @@ Source6:	icewm-32.png
 Source7:	icewm-48.png
 Source8:	icewm-starticewm
 Source9:	icewm-monochrome.tar.bz2
-Source10:	icewm-galaxy.tar.bz2
 Source12:	icewm-menu-xdg
 
 Patch0:		icewm-1.3-dev-mdvconf.patch
@@ -45,17 +44,9 @@ Patch8:		icewm-1.2.5-lib64.patch
 Patch10:	icewm-desktop.patch
 Patch11:	icewmbg-1.2.14pre11-fixcrash.patch
 Patch12:	icewm-1.2.14pre11-background.patch
-Patch16:	icewm-1.3-dev-default-theme.patch
 Patch18:	icewm-1.2.26-more_virtual_desktops.patch
-Patch21:        icewm-1.3.1-fix-build.patch
-Patch22:        icewm-1.3.0-gdkicon.patch
-Patch23:	icewm-1.3.0-kdeicon.patch
-Patch24:	icewm-1.3.0-fdoicon.patch
 Patch25:	icewm-1.3.0-fix-focusing-on-raise.patch
-Patch26:	icewm-1.3.1-helppath.patch
 Patch27:	icewm-1.3.3-gcc.patch
-# from Fedora
-Patch100:	icewm-configure.patch
 
 BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 BuildRequires:  libx11-devel
@@ -65,10 +56,10 @@ BuildRequires:	autoconf2.5
 BuildRequires:	gettext
 BuildRequires:	libpcap-devel
 BuildRequires:	xpm-devel
-BuildRequires:	gnome-desktop-devel
+#BuildRequires:	gnome-desktop-devel
 BuildRequires:	libgnomeui2-devel
 BuildRequires:  libgdk_pixbuf2.0-devel
-BuildRequires:  linuxdoc-tools
+#BuildRequires:  linuxdoc-tools
 BuildRequires:  pkgconfig(xft)
 BuildRequires:  pkgconfig(gdk-pixbuf-xlib-2.0)
 BuildRequires:  x11-proto-devel
@@ -119,7 +110,7 @@ options enabled.
 %endif
 
 %prep
-%setup -q -a 2 -a 9 -a 10 -n %name-%theirversion
+%setup -q -a 2 -a 9 -n %name-%theirversion
 %patch0 -p1 -b .mdkconf
 %patch1 -p1 -b .xcin_bindy
 %patch2 -p1 -b .defaultfont
@@ -130,22 +121,14 @@ options enabled.
 %patch10 -p1 -b .desktop
 %patch11 -p1 -b .nocrash
 %patch12 -p1 -b .background
-%patch16 -p1 -b .default-theme
 %patch18 -p1 -b .more_desktop
-%patch21 -p1
-%patch22 -p1 -b .gdkicon
-%patch23 -p1 -b .kdeicon
-%patch24 -p1 -b .fdoicon
 %patch25 -p1 -b .focus
-%patch26 -p1 -b .helppath
 %patch27 -p0 -b .gcc
-%patch100 -p1 -b .configure
 autoconf
 
 rm -f po/en.* #- en is not a valid locale
 
 bzcat %{SOURCE1} > lib/taskbar/mandrake.xpm
-mv galaxy-icewm/Galaxy themes
 
 chmod -R a+rX themes
 find themes -type f | xargs chmod a-x
@@ -342,10 +325,6 @@ fi
 %{_datadir}/X11/%{name}/toolbar
 %{_datadir}/X11/%{name}/winoptions
 #%{_datadir}/X11/%{name}/programs
-%{_datadir}/X11/%{name}/themes/Galaxy
-%if %mdkversion < 200700
-%{_menudir}/%{name}
-%endif
 %{_iconsdir}/%{name}.png
 %{_miconsdir}/%{name}.png
 %{_liconsdir}/%{name}.png

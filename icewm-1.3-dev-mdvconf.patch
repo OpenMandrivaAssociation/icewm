@@ -50,7 +50,7 @@
 +XSV(const char *, iconPath,                     "/usr/share/icons:/usr/share/icons/hicolor:/usr/share/icons/locolor:/usr/share/icons/crystalsvg:/usr/share/X11/icewm/icons")
  #define CONFIG_DEFAULT_THEME "icedesert/default.theme"
  XSV(const char *, themeName,                    CONFIG_DEFAULT_THEME)
- 
+ XSV(const char *, xineramaPrimaryScreenName,    0)
 --- icewm-1.3-dev/src/default.h.pix	2006-08-24 22:16:13.000000000 +0200
 +++ icewm-1.3-dev/src/default.h	2006-11-21 09:05:17.000000000 +0100
 @@ -139,27 +139,27 @@
