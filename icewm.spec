@@ -201,12 +201,7 @@ done
 
 cp -a default/themes %{buildroot}%{_datadir}/X11/%{name}
 
-%if %mdkversion < 200700
-install -D -m644 %{SOURCE3} %{buildroot}%{_menudir}/%{name}
-install -D -m755 %{SOURCE4} %{buildroot}/etc/menu-methods/%{name}
-%else
 install -D -m755 %{SOURCE12} %{buildroot}%{_sysconfdir}/menu.d/%{name}
-%endif
 
 # icon
 install -D -m644 %{SOURCE6} %{buildroot}%{_iconsdir}/%{name}.png
@@ -309,11 +304,7 @@ fi
 %dir %{_datadir}/X11/%{name}/ledclock
 %dir %{_datadir}/X11/%{name}/taskbar
 %dir %{_datadir}/X11/%{name}/mailbox
-%if %mdkversion < 200700
-/etc/menu-methods/%{name}
-%else
 /etc/menu.d/%{name}
-%endif
 %config(noreplace) /etc/X11/wmsession.d/*
 %{_bindir}/starticewm
 %{_datadir}/X11/%{name}/mailbox/*
@@ -339,6 +330,7 @@ fi
 %defattr(-,root,root)
 %doc gnome/COPYING
 %{_bindir}/*-gnome
+%{_bindir}/icewm-set-gnomewm
 %endif
 
 
