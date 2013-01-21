@@ -1,13 +1,13 @@
 sources:
-  icewm-1.3.1.tar.bz2:	af9f8cd78af70e0043a1dfb1140267285b2a6c14
-  icewm-16.png:	2aa5389c09520bf726237d0bf5846f5d14dc2cd1
-  icewm-32.png:	684907a2ba8f0d1e4535e42bb055abd8838ed914
-  icewm-48.png:	bbb70d754f924497134a84dd16e1cd45ca944dd7
-  icewm-galaxy.tar.bz2:	0968701cb605d15950f48bd5514124f3b12f4712
-  icewm.menu:	eeaf2bcad2a3be1f08e1404846709864f9eb8f27
-  icewm.menu-method:	ff137008eb4238790ec9ecbbcb90fac23e1d19ee
-  icewm-menu-xdg:	659ca99a61d9df81cb0fa7729299ff8faed5b28c
-  icewm-monochrome.tar.bz2:	1d731053356ab7ceed203ffdeb12634585b24382
-  icewm-starticewm:	61db8da207d24788d496da8fdb1fe88a6001e368
-  mandrake.xpm.bz2:	a7af88b14f37b5deb95acdcf31829f541723d356
-  themes.tar.lzma:	4b01f97c0923f8b0d4daa8a30b791b517cfbcd78
+  icewm-1.3.1.tar.bz2: af9f8cd78af70e0043a1dfb1140267285b2a6c14
+  icewm-16.png: 2aa5389c09520bf726237d0bf5846f5d14dc2cd1
+  icewm-32.png: 684907a2ba8f0d1e4535e42bb055abd8838ed914
+  icewm-48.png: bbb70d754f924497134a84dd16e1cd45ca944dd7
+  icewm-galaxy.tar.bz2: 0968701cb605d15950f48bd5514124f3b12f4712
+  icewm.menu: eeaf2bcad2a3be1f08e1404846709864f9eb8f27
+  icewm.menu-method: ff137008eb4238790ec9ecbbcb90fac23e1d19ee
+  icewm-menu-xdg: 659ca99a61d9df81cb0fa7729299ff8faed5b28c
+  icewm-monochrome.tar.bz2: 1d731053356ab7ceed203ffdeb12634585b24382
+  icewm-starticewm: 61db8da207d24788d496da8fdb1fe88a6001e368
+  mandrake.xpm.bz2: a7af88b14f37b5deb95acdcf31829f541723d356
+  themes.tar.lzma: 4b01f97c0923f8b0d4daa8a30b791b517cfbcd78
