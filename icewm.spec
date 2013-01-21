@@ -1,7 +1,7 @@
 %define name	icewm
 %define version	1.3.3
 %define theirversion 1.3.1
-%define release %mkrel 7
+%define release 8
 
 %define with_light 1
 %define with_gnome 1
@@ -65,7 +65,7 @@ BuildRequires:	gettext
 BuildRequires:	libpcap-devel
 BuildRequires:	xpm-devel
 BuildRequires:	gnome-desktop-devel
-BuildRequires:	gnomeui2-devel
+BuildRequires:	libgnomeui2-devel
 BuildRequires:  libgdk_pixbuf2.0-devel
 BuildRequires:  linuxdoc-tools
 Requires:	mandrake_desk >= 7.1-1mdk, %{name}-light >= %epoch:%{version}
