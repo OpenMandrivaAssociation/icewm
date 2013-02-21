@@ -51,7 +51,7 @@ Patch28:	icewm-1.3.7-fontconfig_link.patch
 
 BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 BuildRequires:  libx11-devel
-BuildRequires:  libsm-devel
+BuildRequires:  pkgconfig(sm)
 BuildRequires:  libxrandr-devel
 BuildRequires:	autoconf2.5
 BuildRequires:	gettext
