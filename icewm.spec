@@ -1,7 +1,7 @@
 %define name	icewm
 %define version	1.3.7
 %define theirversion 1.3.7
-%define release 1
+%define release  2
 
 %define with_light 1
 %define with_gnome 1
@@ -49,7 +49,6 @@ Patch25:	icewm-1.3.0-fix-focusing-on-raise.patch
 Patch27:	icewm-1.3.3-gcc.patch
 Patch28:	icewm-1.3.7-fontconfig_link.patch
 
-BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 BuildRequires:  pkgconfig(x11)
 BuildRequires:  pkgconfig(sm)
 BuildRequires:  pkgconfig(xrandr)
