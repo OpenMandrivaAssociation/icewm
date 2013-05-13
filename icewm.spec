@@ -50,15 +50,15 @@ Patch27:	icewm-1.3.3-gcc.patch
 Patch28:	icewm-1.3.7-fontconfig_link.patch
 
 BuildRoot:	%{_tmppath}/%{name}-%{version}-root
-BuildRequires:  libx11-devel
+BuildRequires:  pkgconfig(x11)
 BuildRequires:  pkgconfig(sm)
-BuildRequires:  libxrandr-devel
+BuildRequires:  pkgconfig(xrandr)
 BuildRequires:	autoconf2.5
 BuildRequires:	gettext
-BuildRequires:	libpcap-devel
+BuildRequires:	pcap-devel = 1.3.0-2
 BuildRequires:	xpm-devel
 BuildRequires:	gnome-desktop-devel
-BuildRequires:	libgnomeui2-devel
+BuildRequires:	pkgconfig(libgnomeui-2.0)
 BuildRequires:  libgdk_pixbuf2.0-devel
 BuildRequires:  linuxdoc-tools
 BuildRequires:  pkgconfig(xft)
