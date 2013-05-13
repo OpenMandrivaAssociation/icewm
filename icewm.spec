@@ -1,27 +1,21 @@
-%define name	icewm
-%define version	1.3.7
-%define theirversion 1.3.7
-%define release  2
-
 %define with_light 1
 %define with_gnome 1
-%{?_with_no_light: %{expand: %%global with_light 0}}
-%{?_with_no_gnome: %{expand: %%global with_gnome 0}}
+%{?_with_no_light:	%{expand:	%%global with_light 0}}
+%{?_with_no_gnome:	%{expand:	%%global with_gnome 0}}
 
 %define light_apps          icewm icesh icewmbg icewmhint icewm-session
 %define default_apps        %{light_apps} icehelp
 %define gnome_apps          %{default_apps} icesound
 
-Name:		%{name}
 Summary:	X11 Window Manager
-Version:	%{version}
-Release:	%{release}
-License:	LGPL
-Group:		Graphical desktop/Icewm
+Name:		icewm
 Epoch:		1
-
-URL:		http://www.icewm.org/
-Source:		icewm-%{theirversion}.tar.gz
+Version:	1.3.7
+Release:	2
+License:	LGPLv2
+Group:		Graphical desktop/Icewm
+Url:		http://www.icewm.org/
+Source0:	icewm-%{version}.tar.gz
 Source1:	mandrake.xpm.bz2
 Source2:	themes.tar.lzma
 Source3:	icewm.menu
@@ -49,21 +43,21 @@ Patch25:	icewm-1.3.0-fix-focusing-on-raise.patch
 Patch27:	icewm-1.3.3-gcc.patch
 Patch28:	icewm-1.3.7-fontconfig_link.patch
 
-BuildRequires:  pkgconfig(x11)
-BuildRequires:  pkgconfig(sm)
-BuildRequires:  pkgconfig(xrandr)
-BuildRequires:	autoconf2.5
 BuildRequires:	gettext
+BuildRequires:	linuxdoc-tools
 BuildRequires:	pcap-devel = 1.3.0-2
-BuildRequires:	xpm-devel
-BuildRequires:	gnome-desktop-devel
+BuildRequires:	pkgconfig(gdk-pixbuf-2.0)
+BuildRequires:	pkgconfig(gdk-pixbuf-xlib-2.0)
+BuildRequires:	pkgconfig(gnome-desktop-2.0)
 BuildRequires:	pkgconfig(libgnomeui-2.0)
-BuildRequires:  libgdk_pixbuf2.0-devel
-BuildRequires:  linuxdoc-tools
-BuildRequires:  pkgconfig(xft)
-BuildRequires:  pkgconfig(gdk-pixbuf-xlib-2.0)
-BuildRequires:  x11-proto-devel
-Requires:	mandrake_desk >= 7.1-1mdk, %{name}-light >= %epoch:%{version}
+BuildRequires:	pkgconfig(sm)
+BuildRequires:	pkgconfig(xft)
+BuildRequires:	pkgconfig(xpm)
+BuildRequires:	pkgconfig(xproto)
+BuildRequires:	pkgconfig(xrandr)
+BuildRequires:	pkgconfig(x11)
+Requires:	mandrake_desk
+Requires:	%{name}-light >= %{EVRD}
 Requires:	xlockmore
 Requires:	xdg-compliance-menu
 Requires:	xdg-compliance-autostart
@@ -79,8 +73,8 @@ window list, mailbox status, digital clock. Fast and small.
 %package light
 Summary:	A light version of Icewm
 Group:		Graphical desktop/Icewm
-Requires(post): menu >= 2.1.5-4mdk
-Requires(postun): menu >= 2.1.5-4mdk
+Requires(post):	menu >= 2.1.5-4mdk
+Requires(postun):	menu >= 2.1.5-4mdk
 # due to some theme move between icewm and icewm-light, urpmi needs help
 Conflicts:	icewm < 1.2.20
 
@@ -92,12 +86,11 @@ window list, mailbox status, digital clock. Fast and small.
 
 This is the light version with minimal features.
 
-
 %if %{with_gnome}
 %package gnome
-Summary:        A gnome compatible version of Icewm
-Group:          Graphical desktop/Icewm
-Requires:       %{name}-light = %epoch:%{version}
+Summary:	A gnome compatible version of Icewm
+Group:		Graphical desktop/Icewm
+Requires:	%{name}-light = %epoch:%{version}
 
 %description gnome
 Window Manager for X Window System. Can emulate the look of Windows'95, OS/2
@@ -110,7 +103,7 @@ options enabled.
 %endif
 
 %prep
-%setup -q -a 2 -a 9 -n %name-%theirversion
+%setup -q -a 2 -a 9 -n %name-%version
 %patch0 -p1 -b .mdkconf
 %patch1 -p1 -b .xcin_bindy
 %patch2 -p1 -b .defaultfont
@@ -137,11 +130,10 @@ find themes -type f | xargs chmod a-x
 rm -r themes/Urbicande
 
 %build
-
 # moving everything to default
-mv %{_builddir}/%{name}-%{theirversion} %{_builddir}/%{name}-%{theirversion}-default
-install -d %{_builddir}/%{name}-%{theirversion}
-mv %{_builddir}/%{name}-%{theirversion}-default %{_builddir}/%{name}-%{theirversion}/default
+mv %{_builddir}/%{name}-%{version} %{_builddir}/%{name}-%{version}-default
+install -d %{_builddir}/%{name}-%{version}
+mv %{_builddir}/%{name}-%{version}-default %{_builddir}/%{name}-%{version}/default
 cd .
 # then creating duplicates
 for i in light gnome; do cp -a default $i; done
@@ -178,8 +170,6 @@ echo "Standard Version"
 )
 
 %install
-rm -rf %{buildroot}
-
 %makeinstall_std -C default
 
 # --with-bindir doesn't work
@@ -229,9 +219,6 @@ perl -pi -e "s!# DesktopBackgroundColor=.*!DesktopBackgroundColor=\"\"!" %buildr
 
 %find_lang %{name}
 cat %{name}.lang >> other.list
-
-%clean
-rm -rf %{buildroot}
 
 %if %{with_light}
 %post light
@@ -283,7 +270,6 @@ fi
 %{make_session}
 
 %files -f other.list
-%defattr(-,root,root)
 %doc default/README default/COPYING default/AUTHORS default/CHANGES default/TODO default/BUGS
 %doc default/doc/*.html default/doc/icewm.sgml
 %{_bindir}/icesh
@@ -295,7 +281,6 @@ fi
 %{_bindir}/icewmtray
 
 %files light
-%defattr(-,root,root)
 %doc light/COPYING
 %dir %{_datadir}/X11/%{name}
 %dir %{_datadir}/X11/%{name}/themes
@@ -326,7 +311,6 @@ fi
 
 %if %{with_gnome}
 %files gnome
-%defattr(-,root,root)
 %doc gnome/COPYING
 %{_bindir}/*-gnome
 %{_bindir}/icewm-set-gnomewm
