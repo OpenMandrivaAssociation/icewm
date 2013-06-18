@@ -11,7 +11,7 @@ Summary:	X11 Window Manager
 Name:		icewm
 Epoch:		1
 Version:	1.3.7
-Release:	2
+Release:	3
 License:	LGPLv2
 Group:		Graphical desktop/Icewm
 Url:		http://www.icewm.org/
@@ -45,7 +45,7 @@ Patch28:	icewm-1.3.7-fontconfig_link.patch
 
 BuildRequires:	gettext
 BuildRequires:	linuxdoc-tools
-BuildRequires:	pcap-devel = 1.3.0-2
+BuildRequires:	pcap-devel >= 1.3.0-2
 BuildRequires:	pkgconfig(gdk-pixbuf-2.0)
 BuildRequires:	pkgconfig(gdk-pixbuf-xlib-2.0)
 BuildRequires:	pkgconfig(gnome-desktop-2.0)
@@ -154,7 +154,7 @@ echo "Gnome Version"
 (
 	cd gnome
 	CXXFLAGS="$RPM_OPT_FLAGS" %configure2_5x $COMMON_CONFIGURE \
-		--with-icesound=oss,esd --enable-menus-gnome2 \
+		--with-icesound=oss,alsa --enable-menus-gnome2 \
 		--enable-xfreetype --enable-antialiasing --enable-guievents
 	%make
 )
