@@ -73,8 +73,8 @@ window list, mailbox status, digital clock. Fast and small.
 %package light
 Summary:	A light version of Icewm
 Group:		Graphical desktop/Icewm
-Requires(post):	menu >= 2.1.5-4mdk
-Requires(postun):	menu >= 2.1.5-4mdk
+Requires(post):	menu-xdg
+Requires(postun):	menu-xdg
 # due to some theme move between icewm and icewm-light, urpmi needs help
 Conflicts:	icewm < 1.2.20
 
