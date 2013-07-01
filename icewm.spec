@@ -23,7 +23,7 @@ Source4:	icewm.menu-method
 Source5:	icewm-16.png
 Source6:	icewm-32.png
 Source7:	icewm-48.png
-#Source8:	icewm-starticewm
+Source8:	icewm-starticewm
 Source9:	icewm-monochrome.tar.bz2
 Source12:	icewm-menu-xdg
 

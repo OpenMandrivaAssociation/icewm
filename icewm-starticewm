@@ -1,0 +1,8 @@
+#!/bin/bash
+# JMD: add icewm-desktop so that icewm can be integrated with rox, dfm,
+# or another program that adds icons to the desktop
+if [ -e /usr/bin/icewm-desktop ];then
+  /usr/bin/icewm-desktop
+else
+  /usr/bin/icewm-session
+fi
