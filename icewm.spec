@@ -11,7 +11,7 @@ Summary:	X11 Window Manager
 Name:		icewm
 Epoch:		1
 Version:	1.3.7
-Release:	4
+Release:	4.1
 License:	LGPLv2
 Group:		Graphical desktop/Icewm
 Url:		http://www.icewm.org/
@@ -75,6 +75,7 @@ Summary:	A light version of Icewm
 Group:		Graphical desktop/Icewm
 Requires(post):	menu-xdg
 Requires(postun):	menu-xdg
+Requires:	lxpolkit
 # due to some theme move between icewm and icewm-light, urpmi needs help
 Conflicts:	icewm < 1.2.20
 
