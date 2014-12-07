@@ -11,7 +11,7 @@ Summary:	X11 Window Manager
 Name:		icewm
 Epoch:		1
 Version:	1.3.7
-Release:	10
+Release:	11
 License:	LGPLv2
 Group:		Graphical desktop/Icewm
 Url:		http://www.icewm.org/
