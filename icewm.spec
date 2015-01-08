@@ -50,6 +50,7 @@ BuildRequires:	pkgconfig(libgnomeui-2.0)
 %endif
 BuildRequires:	pkgconfig(sm)
 BuildRequires:	pkgconfig(xft)
+BuildRequires:	pkgconfig(xinerama)
 BuildRequires:	pkgconfig(xpm)
 BuildRequires:	pkgconfig(xproto)
 BuildRequires:	pkgconfig(xrandr)
