@@ -267,4 +267,4 @@
 +        return true;
      } else if (IS_WMKEY(k, vm, gKeySysTileVertical)) {
          XAllowEvents(xapp->display(), AsyncKeyboard, key.time);
-         wmapp->actionPerformed(actionTileVertical, 0);
+         wmActionListener->actionPerformed(actionTileVertical, 0);

@@ -1,7 +1,5 @@
-%define with_light 1
-%define with_gnome 1
-%{?_with_no_light:	%{expand:	%%global with_light 0}}
-%{?_with_no_gnome:	%{expand:	%%global with_gnome 0}}
+%bcond_without light
+%bcond_with gnome
 
 %define light_apps          icewm icesh icewmbg icewmhint icewm-session
 %define default_apps        %{light_apps} icehelp
@@ -10,8 +8,8 @@
 Summary:	X11 Window Manager
 Name:		icewm
 Epoch:		1
-Version:	1.3.7
-Release:	11
+Version:	1.3.8
+Release:	1
 License:	LGPLv2
 Group:		Graphical desktop/Icewm
 Url:		http://www.icewm.org/
@@ -40,16 +38,16 @@ Patch11:	icewmbg-1.2.14pre11-fixcrash.patch
 Patch12:	icewm-1.2.14pre11-background.patch
 Patch18:	icewm-1.2.26-more_virtual_desktops.patch
 Patch25:	icewm-1.3.0-fix-focusing-on-raise.patch
-Patch27:	icewm-1.3.3-gcc.patch
-Patch28:	icewm-1.3.7-fontconfig_link.patch
 
 BuildRequires:	gettext
 BuildRequires:	linuxdoc-tools
 BuildRequires:	pcap-devel >= 1.3.0-2
 BuildRequires:	pkgconfig(gdk-pixbuf-2.0)
 BuildRequires:	pkgconfig(gdk-pixbuf-xlib-2.0)
+%if %{with gnome}
 BuildRequires:	pkgconfig(gnome-desktop-2.0)
 BuildRequires:	pkgconfig(libgnomeui-2.0)
+%endif
 BuildRequires:	pkgconfig(sm)
 BuildRequires:	pkgconfig(xft)
 BuildRequires:	pkgconfig(xpm)
@@ -87,7 +85,7 @@ window list, mailbox status, digital clock. Fast and small.
 
 This is the light version with minimal features.
 
-%if %{with_gnome}
+%if %{with gnome}
 %package gnome
 Summary:	A gnome compatible version of Icewm
 Group:		Graphical desktop/Icewm
@@ -117,8 +115,6 @@ options enabled.
 %patch12 -p1 -b .background
 %patch18 -p1 -b .more_desktop
 %patch25 -p1 -b .focus
-%patch27 -p0 -b .gcc
-%patch28 -p1 -b .fontconfig_link
 autoconf
 
 rm -f po/en.* #- en is not a valid locale
@@ -141,7 +137,7 @@ for i in light gnome; do cp -a default $i; done
 
 COMMON_CONFIGURE="--sysconfdir=/etc --enable-i18n --enable-nls --with-docdir=%{_docdir} --with-libdir=%{_datadir}/X11/%{name}"
 
-%if %{with_light}
+%if %{with light}
 echo "Light Version"
 (
 	cd light
@@ -150,7 +146,7 @@ echo "Light Version"
 )
 %endif
 
-%if %{with_gnome}
+%if %{with gnome}
 echo "Gnome Version"
 (
 	cd gnome
@@ -177,13 +173,13 @@ echo "Standard Version"
 #install -d %{buildroot}%{_bindir}
 #mv %{buildroot}/usr/bin/* %{buildroot}%{_bindir}
 
-%if %{with_light}
+%if %{with light}
 for binary in %{light_apps}; do 
    install light/src/${binary} %{buildroot}%{_bindir}/${binary}-light
 done
 %endif
 
-%if %{with_gnome}
+%if %{with gnome}
 for binary in %{gnome_apps}; do 
    install gnome/src/${binary} %{buildroot}%{_bindir}/${binary}-gnome
 done
@@ -221,7 +217,11 @@ perl -pi -e "s!# DesktopBackgroundColor=.*!DesktopBackgroundColor=\"\"!" %buildr
 %find_lang %{name}
 cat %{name}.lang >> other.list
 
-%if %{with_light}
+%if %{without gnome}
+rm -f %{buildroot}%{_bindir}/icewm-set-gnomewm
+%endif
+
+%if %{with light}
 %post light
 for app in %{light_apps}; do
 	update-alternatives --install %{_bindir}/${app} ${app} %{_bindir}/${app}-light 10
@@ -240,7 +240,7 @@ fi
 %{make_session}
 %endif
 
-%if %{with_gnome}
+%if %{with gnome}
 %post gnome
 for app in %{light_apps}; do
 	update-alternatives --install %{_bindir}/${app} ${app} %{_bindir}/${app}-gnome 30
@@ -306,11 +306,11 @@ fi
 %{_iconsdir}/%{name}.png
 %{_miconsdir}/%{name}.png
 %{_liconsdir}/%{name}.png
-%if %{with_light}
+%if %{with light}
 %{_bindir}/*-light
 %endif
 
-%if %{with_gnome}
+%if %{with gnome}
 %files gnome
 %doc gnome/COPYING
 %{_bindir}/*-gnome
