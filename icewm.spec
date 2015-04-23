@@ -202,13 +202,6 @@ excludes_patt="\(themes/Galaxy\|icewm/icons/\(app_\|xterm_\)\)"
 # xsession support
 mkdir -p %{buildroot}%{_datadir}/xsessions
 cat << EOF > %{buildroot}%{_datadir}/xsessions/icewm.desktop
-NAME=IceWM
-ICON=icewm-wmsession.xpm
-EXEC=/usr/bin/starticewm
-DESC=Lightweight desktop environment
-SCRIPT:
-exec /usr/bin/starticewm
-
 [Desktop Entry]
 Encoding=UTF-8
 Name=icewm-wmsession.xpm
@@ -295,6 +288,7 @@ fi
 %dir %{_datadir}/X11/%{name}/taskbar
 %dir %{_datadir}/X11/%{name}/mailbox
 /etc/menu.d/%{name}
+%{_datadir}/xsessions/icewm.desktop
 %{_bindir}/starticewm
 %{_datadir}/X11/%{name}/mailbox/*
 %{_datadir}/X11/%{name}/taskbar/*
