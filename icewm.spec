@@ -13,7 +13,7 @@ Release:	2
 License:	LGPLv2
 Group:		Graphical desktop/Icewm
 Url:		http://www.icewm.org/
-Source0:	icewm-%{version}.tar.gz
+Source0:	http://downloads.sourceforge.net/project/icewm/icewm-1.3/%{version}/icewm-%{version}.tar.gz
 Source1:	mandrake.xpm.bz2
 Source2:	themes.tar.lzma
 Source3:	icewm.menu
@@ -74,7 +74,7 @@ Summary:	A light version of Icewm
 Group:		Graphical desktop/Icewm
 Requires(post):	menu-xdg
 Requires(postun):	menu-xdg
-Requires:	lxpolkit
+Requires:	polkit-agent
 # due to some theme move between icewm and icewm-light, urpmi needs help
 Conflicts:	icewm < 1.2.20
 
