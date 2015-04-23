@@ -74,7 +74,7 @@ Summary:	A light version of Icewm
 Group:		Graphical desktop/Icewm
 Requires(post):	menu-xdg
 Requires(postun):	menu-xdg
-Requires:	polkit-agent
+Suggests:	lxpolkit
 # due to some theme move between icewm and icewm-light, urpmi needs help
 Conflicts:	icewm < 1.2.20
 
