@@ -9,7 +9,7 @@ Summary:	X11 Window Manager
 Name:		icewm
 Epoch:		1
 Version:	1.3.8
-Release:	3
+Release:	4
 License:	LGPLv2
 Group:		Graphical desktop/Icewm
 Url:		http://www.icewm.org/
@@ -204,7 +204,7 @@ mkdir -p %{buildroot}%{_datadir}/xsessions
 cat << EOF > %{buildroot}%{_datadir}/xsessions/icewm.desktop
 [Desktop Entry]
 Encoding=UTF-8
-Name=icewm.png
+Name=Icewm
 Comment=Lightweight desktop environment
 Exec=/usr/bin/starticewm
 Terminal=False
