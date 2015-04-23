@@ -1,15 +1,15 @@
 %bcond_without light
 %bcond_with gnome
 
-%define light_apps          icewm icesh icewmbg icewmhint icewm-session
-%define default_apps        %{light_apps} icehelp
-%define gnome_apps          %{default_apps} icesound
+%define light_apps icewm icesh icewmbg icewmhint icewm-session
+%define default_apps %{light_apps} icehelp
+%define gnome_apps %{default_apps} icesound
 
 Summary:	X11 Window Manager
 Name:		icewm
 Epoch:		1
 Version:	1.3.8
-Release:	1
+Release:	2
 License:	LGPLv2
 Group:		Graphical desktop/Icewm
 Url:		http://www.icewm.org/
@@ -55,7 +55,7 @@ BuildRequires:	pkgconfig(xpm)
 BuildRequires:	pkgconfig(xproto)
 BuildRequires:	pkgconfig(xrandr)
 BuildRequires:	pkgconfig(x11)
-Requires:	mandrake_desk
+Requires:	desktop-common-data
 Requires:	%{name}-light >= %{EVRD}
 Requires:	xlockmore
 Requires:	xdg-compliance-menu
@@ -103,7 +103,7 @@ options enabled.
 %endif
 
 %prep
-%setup -q -a 2 -a 9 -n %name-%version
+%setup -q -a 2 -a 9 -n %{name}-%{version}
 %patch0 -p1 -b .mdkconf
 %patch1 -p1 -b .xcin_bindy
 %patch2 -p1 -b .defaultfont
@@ -142,7 +142,7 @@ COMMON_CONFIGURE="--sysconfdir=/etc --enable-i18n --enable-nls --with-docdir=%{_
 echo "Light Version"
 (
 	cd light
-	CXXFLAGS="$RPM_OPT_FLAGS" %configure2_5x $COMMON_CONFIGURE --enable-lite
+	CXXFLAGS="%{optflags}" %configure $COMMON_CONFIGURE --enable-lite
 	%make
 )
 %endif
@@ -151,7 +151,7 @@ echo "Light Version"
 echo "Gnome Version"
 (
 	cd gnome
-	CXXFLAGS="$RPM_OPT_FLAGS" %configure2_5x $COMMON_CONFIGURE \
+	CXXFLAGS="%{optflags}" %configure $COMMON_CONFIGURE \
 		--with-icesound=oss,alsa --enable-menus-gnome2 \
 		--enable-xfreetype --enable-antialiasing --enable-guievents
 	%make
@@ -161,7 +161,7 @@ echo "Gnome Version"
 echo "Standard Version"
 (
 	cd default
-	CXXFLAGS="$RPM_OPT_FLAGS" %configure2_5x $COMMON_CONFIGURE
+	CXXFLAGS="%{optflags}" %configure $COMMON_CONFIGURE
 	%make
         cd doc
         %make
@@ -199,15 +199,25 @@ excludes_patt="\(themes/Galaxy\|icewm/icons/\(app_\|xterm_\)\)"
 (cd %{buildroot}%{_datadir} ; find X11/%{name}/{icons,themes} ! -type d -printf "%{_datadir}/%%p\n") | grep -v "$excludes_patt" > other.list
 (cd %{buildroot}%{_datadir} ; find X11/%{name}/{icons,themes}   -type d -printf "%%%%dir %{_datadir}/%%p\n") | grep -v "$excludes_patt" >> other.list
 
-# wmsession support
-mkdir -p %{buildroot}/etc/X11/wmsession.d/
-cat << EOF > %{buildroot}/etc/X11/wmsession.d/07IceWM
+# xsession support
+mkdir -p %{buildroot}%{_datadir}/xsessions
+cat << EOF > %{buildroot}%{_datadir}/xsessions/icewm.desktop
 NAME=IceWM
 ICON=icewm-wmsession.xpm
 EXEC=/usr/bin/starticewm
 DESC=Lightweight desktop environment
 SCRIPT:
 exec /usr/bin/starticewm
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=icewm-wmsession.xpm
+Comment=Lightweight desktop environment
+Exec=/usr/bin/starticewm
+Terminal=False
+
+[Window Manager]
+SessionManaged=true
 EOF
 
 install -m 755 %{SOURCE8} %{buildroot}%{_bindir}/starticewm
@@ -228,7 +238,6 @@ for app in %{light_apps}; do
 	update-alternatives --install %{_bindir}/${app} ${app} %{_bindir}/${app}-light 10
 done
 	
-%{make_session}
 if [ -x %{_bindir}/update-menus ]; then %{_bindir}/update-menus; fi
 
 %postun light
@@ -238,7 +247,6 @@ if [ "$1" = 0 ]; then
 		update-alternatives --remove ${app} %{_bindir}/${app}-light
 	done
 fi
-%{make_session}
 %endif
 
 %if %{with gnome}
@@ -246,7 +254,6 @@ fi
 for app in %{light_apps}; do
 	update-alternatives --install %{_bindir}/${app} ${app} %{_bindir}/${app}-gnome 30
 done
-%{make_session}
 
 %postun gnome
 if [ "$1" = 0 ]; then
@@ -254,14 +261,12 @@ if [ "$1" = 0 ]; then
 		update-alternatives --remove ${app} %{_bindir}/${app}-gnome
 	done
 fi
-%{make_session}
 %endif
 
 %post
 for app in %{default_apps}; do
 	update-alternatives --install %{_bindir}/${app} ${app} %{_bindir}/${app} 20
 done
-%{make_session}
 
 %postun
 if [ "$1" = 0 ]; then
@@ -269,7 +274,6 @@ if [ "$1" = 0 ]; then
 		update-alternatives --remove ${app} %{_bindir}/${app}
 	done
 fi
-%{make_session}
 
 %files -f other.list
 %doc default/README default/COPYING default/AUTHORS default/CHANGES default/TODO default/BUGS
@@ -291,7 +295,6 @@ fi
 %dir %{_datadir}/X11/%{name}/taskbar
 %dir %{_datadir}/X11/%{name}/mailbox
 /etc/menu.d/%{name}
-%config(noreplace) /etc/X11/wmsession.d/*
 %{_bindir}/starticewm
 %{_datadir}/X11/%{name}/mailbox/*
 %{_datadir}/X11/%{name}/taskbar/*
@@ -317,5 +320,3 @@ fi
 %{_bindir}/*-gnome
 %{_bindir}/icewm-set-gnomewm
 %endif
-
-
