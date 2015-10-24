@@ -1,5 +1,6 @@
 %bcond_without light
 %bcond_with gnome
+%define _disable_lto 1
 
 %define light_apps icewm icesh icewmbg icewmhint icewm-session
 %define default_apps %{light_apps} icehelp
@@ -9,7 +10,7 @@ Summary:	X11 Window Manager
 Name:		icewm
 Epoch:		1
 Version:	1.3.8
-Release:	6
+Release:	7
 License:	LGPLv2
 Group:		Graphical desktop/Icewm
 Url:		http://www.icewm.org/
