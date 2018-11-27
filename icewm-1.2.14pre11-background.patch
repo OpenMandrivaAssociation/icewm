@@ -8,7 +8,7 @@ diff -urN icewm-1.2.14pre11/src/icewmbg_prefs.h icewm-1.2.14pre11-modified/src/i
 -XSV(const char *, DesktopBackgroundColor, "rgb:00/20/40")
 -XSV(const char *, DesktopBackgroundPixmap, 0)
 +XSV(const char *, DesktopBackgroundColor, 0)
-+XSV(const char *, DesktopBackgroundPixmap, "/usr/share/mdk/backgrounds/default.png")
++XSV(const char *, DesktopBackgroundPixmap, "/usr/share/mga/backgrounds/default.jpg")
  XSV(const char *, DesktopTransparencyColor, 0)
  XSV(const char *, DesktopTransparencyPixmap, 0)
 -XIV(bool, desktopBackgroundScaled, false)

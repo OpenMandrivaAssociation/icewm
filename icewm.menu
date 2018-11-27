@@ -1,4 +1,0 @@
-# Sections menus
-?package(icewm-light):command="icewm-session" icon="icewm.png" needs="wm" \
-               section="Session/Windowmanagers" title="IceWM" \
-	       longtitle="A fast and simple Window Manager"

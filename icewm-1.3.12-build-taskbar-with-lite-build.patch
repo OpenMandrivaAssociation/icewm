@@ -1,0 +1,21 @@
+diff -up ./configure.ac.orig ./configure.ac
+--- ./configure.ac.orig	2017-03-02 17:43:32.361324661 +0200
++++ ./configure.ac	2017-03-02 17:50:08.052432366 +0200
+@@ -315,8 +315,16 @@ fi
+ 
+ AC_ARG_ENABLE([taskbar],
+     AC_HELP_STRING([--disable-taskbar],[Disable builtin taskbar.]))
++if test x$enable_taskbar != xno ; then
++    AC_DEFINE(CONFIG_TASKBAR, 1, [Define to to enable the builtin taskbar.])
++fi
++
+ AC_ARG_ENABLE([winmenu],
+     AC_HELP_STRING([--disable-winmenu],[Disable window list menu.]))
++if test x$enable_winmenu != xno; then
++    AC_DEFINE(CONFIG_WINMENU, 1, [Define to to enable the window list menu.])
++fi
++
+ AC_ARG_ENABLE([lite],
+     AC_HELP_STRING([--enable-lite],[Build lightweight version of IceWM.]))
+ if test x$enable_lite != xyes ; then
+
