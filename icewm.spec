@@ -43,6 +43,7 @@ BuildRequires:	pkgconfig(xinerama)
 BuildRequires:  pkgconfig(xrandr)
 BuildRequires:  linuxdoc-tools
 BuildRequires:	pkgconfig(gdk-pixbuf-2.0)
+BuildRequires:	pkgconfig(gdk-pixbuf-xlib-2.0)
 BuildRequires:	pkgconfig(xpm)
 Requires:	desktop-common-data
 Requires:	%{name}-light >= %{epoch}:%{version}
