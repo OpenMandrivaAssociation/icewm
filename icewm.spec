@@ -63,7 +63,7 @@ window list, mailbox status, digital clock. Fast and small.
 Summary:	A light version of Icewm
 Group:		Graphical desktop/Icewm
 Requires:	xdg-compliance
-Requires:       mate-polkit
+Recommends:	polkit-agent
 # for update-menus
 Requires(post):	desktop-common-data
 Requires(postun):	desktop-common-data
