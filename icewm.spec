@@ -5,7 +5,7 @@ Name:		icewm
 Summary:	X11 Window Manager
 Epoch:		1
 Version:	1.4.2
-Release:	%mkrel 2
+Release:	3
 License:	LGPL
 Group:		Graphical desktop/Icewm
 
@@ -46,8 +46,8 @@ BuildRequires:	pkgconfig(gdk-pixbuf-2.0)
 BuildRequires:	pkgconfig(gdk-pixbuf-xlib-2.0)
 BuildRequires:	pkgconfig(xpm)
 Requires:	desktop-common-data
-Requires:	%{name}-light >= %{epoch}:%{version}
-Requires:	%{name}-i18n >= %{epoch}:%{version}
+Requires:	%{name}-light >= %{EVRD}
+Requires:	%{name}-i18n >= %{EVRD}
 Requires:	xlockmore
 Recommends:	%{name}-themes
 Recommends:	xterm
@@ -108,7 +108,7 @@ window list, mailbox status, digital clock. Fast and small.
 This is translation files for icewm window manager.
 
 %prep
-%setup -q -a 2 -a 9 -n %name-%version
+%setup -q -a 2 -a 9 -n %{name}-%{version}
 %patch1 -p1 -b .xcin_bindy
 %patch2 -p1 -b .defaultfont
 %patch4 -p1 -b .winoptions
@@ -134,7 +134,7 @@ COMMON_CONFIGURE="--sysconfdir=%{_sysconfdir} --enable-i18n --enable-nls --with-
 
 echo "Light Version"
 pushd light
-	CONFIGURE_TOP=.. %configure2_5x $COMMON_CONFIGURE \
+	CONFIGURE_TOP=.. %configure $COMMON_CONFIGURE \
 		--enable-lite \
 		--enable-taskbar \
 		--disable-winmenu \
@@ -144,7 +144,7 @@ popd
 
 echo "Standard Version"
 pushd default
-	CONFIGURE_TOP=.. %configure2_5x $COMMON_CONFIGURE
+	CONFIGURE_TOP=.. %configure $COMMON_CONFIGURE
 	%make_build
         %make_build -C doc
 popd
@@ -159,7 +159,7 @@ done
 rm -rf %{buildroot}%{_bindir}/icewm-set-gnomewm
 
 for binary in %{default_apps}; do
-	mv %{buildroot}%{_bindir}/${binary}  %{buildroot}%{_bindir}/${binary}-default
+    mv %{buildroot}%{_bindir}/${binary}  %{buildroot}%{_bindir}/${binary}-default
 done
 
 cp -a themes %{buildroot}%{_datadir}/%{name}
@@ -184,7 +184,7 @@ perl -pi -e "s!# DesktopBackgroundColor=.*!DesktopBackgroundColor=\"\"!" %buildr
 
 %postun light
 if [ "$1" -eq 0 ]; then
-	update-alternatives --remove icewm %{_bindir}/icewm-light
+    update-alternatives --remove icewm %{_bindir}/icewm-light
 fi
 
 %posttrans light
