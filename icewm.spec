@@ -68,7 +68,6 @@ Recommends:	polkit-agent
 Requires(post):	desktop-common-data
 Requires(postun):	desktop-common-data
 Recommends:	%{name}-i18n
-Conflicts:	desktop-common-data < 1:3.10-2
 
 %description light
 Window Manager for X Window System. Can emulate the look of Windows'95, OS/2
