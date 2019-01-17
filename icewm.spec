@@ -5,7 +5,7 @@ Name:		icewm
 Summary:	X11 Window Manager
 Epoch:		1
 Version:	1.4.2
-Release:	3
+Release:	4
 License:	LGPL
 Group:		Graphical desktop/Icewm
 
@@ -65,7 +65,6 @@ Group:		Graphical desktop/Icewm
 Requires:	xdg-compliance
 Requires:       mate-polkit
 # for update-menus
-Requires:	icewm-theme-oxygen-aya
 Requires(post):	desktop-common-data
 Requires(postun):	desktop-common-data
 Recommends:	%{name}-i18n
