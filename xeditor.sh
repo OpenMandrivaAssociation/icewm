@@ -43,6 +43,9 @@ if [[ -z "$TEXTEDITOR" ]]; then
     [[ -z "$TEXTEDITOR" ]] && TEXTEDITOR=`which gedit 2> /dev/null`
     [[ -z "$TEXTEDITOR" ]] && TEXTEDITOR=`which mousepad 2> /dev/null`
 
+    [[ -z "$TEXTEDITOR" ]] && which vim > /dev/null 2>&1 && TEXTEDITOR="xvt -e vim"
+    [[ -z "$TEXTEDITOR" ]] && which efte > /dev/null 2>&1 && TEXTEDITOR="xvt -e efte"
+    [[ -z "$TEXTEDITOR" ]] && which nano > /dev/null 2>&1 && TEXTEDITOR="xvt -e nano"
     if [[ -z "$TEXTEDITOR" ]]; then
 	EMACS=`readlink /etc/alternatives/emacs`
 	if [[ -n "$EMACS" ]]; then
@@ -53,9 +56,6 @@ if [[ -z "$TEXTEDITOR" ]]; then
 	    fi
 	fi
     fi
-
-    [[ -z "$TEXTEDITOR" ]] && which vim > /dev/null 2>&1 && TEXTEDITOR="xvt -e vim"
-    [[ -z "$TEXTEDITOR" ]] && which nano > /dev/null 2>&1 && TEXTEDITOR="xvt -e nano"
 fi
 
 if [[ -n "$TEXTEDITOR" ]]; then

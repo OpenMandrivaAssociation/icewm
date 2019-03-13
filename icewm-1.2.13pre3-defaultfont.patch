@@ -1,11 +1,11 @@
-diff -urN icewm-1.2.13pre3/src/yconfig.h icewm-1.2.13pre3-modified/src/yconfig.h
---- icewm-1.2.13pre3/src/yconfig.h	2003-09-14 19:13:54.000000000 +0200
-+++ icewm-1.2.13pre3-modified/src/yconfig.h	2003-09-16 15:01:05.000000000 +0200
-@@ -26,23 +26,16 @@
+diff -up icewm-1.5.2/src/yconfig.h.defaultfont icewm-1.5.2/src/yconfig.h
+--- icewm-1.5.2/src/yconfig.h.defaultfont	2019-03-13 19:59:55.122094368 +0100
++++ icewm-1.5.2/src/yconfig.h	2019-03-13 20:09:49.045348840 +0100
+@@ -30,23 +30,16 @@
  #ifndef __YCONFIG_H__
  #define __YCONFIG_H__
  
--#if CONFIG_XFREETYPE >= 2
+-#ifdef CONFIG_XFREETYPE
 -#define FONT(pt) "-*-sans-medium-r-*-*-*-" #pt "-*-*-*-*-*-*"
 -#define BOLDFONT(pt) "-*-sans-bold-r-*-*-*-" #pt "-*-*-*-*-*-*"
 -#define TTFONT(pt) "-*-monospace-medium-r-*-*-*-" #pt "-*-*-*-*-*-*"

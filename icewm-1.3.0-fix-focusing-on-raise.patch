@@ -1,11 +1,12 @@
---- icewm-1.3.0/src/wmapp.cc.pix	2007-08-10 22:40:17.000000000 +0200
-+++ icewm-1.3.0/src/wmapp.cc	2007-08-10 23:40:24.000000000 +0200
-@@ -1172,7 +1172,7 @@ YWMApp::YWMApp(int *argc, char ***argv, 
-         break;
-     default: /* click to focus */
-         clickFocus = true;
--        focusOnAppRaise = false;
-+        focusOnAppRaise = true;
-         requestFocusOnAppRaise = true;
-         raiseOnFocus = true;
-         raiseOnClickClient = true;
+diff -up icewm-1.5.2/src/default.h.omv~ icewm-1.5.2/src/default.h
+--- icewm-1.5.2/src/default.h.omv~	2019-03-13 20:14:08.876374319 +0100
++++ icewm-1.5.2/src/default.h	2019-03-13 20:14:15.454480172 +0100
+@@ -5,7 +5,7 @@
+ 
+ /************************************************************************************************************************************************************/
+ XIV(bool, clickFocus,                           true)
+-XIV(bool, focusOnAppRaise,                      false)
++XIV(bool, focusOnAppRaise,                      true)
+ XIV(bool, requestFocusOnAppRaise,               true)
+ XIV(bool, raiseOnFocus,                         true)
+ XIV(bool, focusOnClickClient,                   true)
