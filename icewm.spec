@@ -39,6 +39,8 @@ BuildRequires:	pkgconfig(xinerama)
 BuildRequires:  pkgconfig(xrandr)
 BuildRequires:  linuxdoc-tools
 BuildRequires:	pkgconfig(xpm)
+BuildRequires:	pkgconfig(libjpeg)
+BuildRequires:	pkgconfig(libpng)
 Requires:	desktop-common-data
 Requires:	%{name}-i18n >= %{EVRD}
 Requires:	xlockmore
