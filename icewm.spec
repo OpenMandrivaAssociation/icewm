@@ -44,6 +44,9 @@ BuildRequires:	pkgconfig(libpng)
 BuildRequires:	pkgconfig(sndfile)
 BuildRequires:	pkgconfig(gio-2.0)
 BuildRequires:	pkgconfig(gio-unix-2.0)
+BuildRequires:	pkgconfig(ao)
+BuildRequires:	pkgconfig(alsa)
+BuildRequires:	asciidoc
 Requires:	desktop-common-data
 Requires:	%{name}-i18n >= %{EVRD}
 Requires:	xlockmore
