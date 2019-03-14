@@ -65,7 +65,6 @@ window list, mailbox status, digital clock. Fast and small.
 Summary:	Extra themes of Icewm
 Group:		Graphical desktop/Icewm
 BuildArch: 	noarch
-Conflicts:	%{name} < 1:1.3.7-2
 
 %description themes
 Window Manager for X Window System. Can emulate the look of Windows'95, OS/2
@@ -79,7 +78,6 @@ This is themes collection for icewm window manager.
 Summary:	locale files of Icewm
 Group:		Graphical desktop/Icewm
 BuildArch: 	noarch
-Conflicts:	%{name} < 1:1.3.7-2
 
 %description i18n
 Window Manager for X Window System. Can emulate the look of Windows'95, OS/2
