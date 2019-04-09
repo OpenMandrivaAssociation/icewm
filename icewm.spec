@@ -99,6 +99,7 @@ find themes -type f | xargs chmod a-x
 %ifarch %{ix86} %{arm}
 export CC=gcc
 export CXX=g++
+%endif
 %cmake \
 	-DCFGDIR="%{_sysconfdir}/%{name}" \
 	-DENABLE_LTO:BOOL=ON
