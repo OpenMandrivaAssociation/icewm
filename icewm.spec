@@ -96,6 +96,7 @@ chmod -R a+rX themes
 find themes -type f | xargs chmod a-x
 
 %build
+# Build with Clang fail on i686 and ARMv7. Switch this two arch to GCC for now. (penguin)
 %ifarch %{ix86} %{arm}
 export CC=gcc
 export CXX=g++
