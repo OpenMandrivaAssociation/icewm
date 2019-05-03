@@ -30,7 +30,6 @@ Patch26:	icewm-1.4.2-mga-default-pref.patch
 BuildRequires:	cmake
 BuildRequires:	gettext-devel
 BuildRequires:	pkgconfig(fribidi)
-BuildRequires:	libpcap-devel
 BuildRequires:  pkgconfig(sm)
 BuildRequires:  pkgconfig(x11)
 BuildRequires:	pkgconfig(xext)
@@ -49,7 +48,6 @@ BuildRequires:	pkgconfig(alsa)
 BuildRequires:	asciidoc
 Requires:	desktop-common-data
 Requires:	%{name}-i18n >= %{EVRD}
-Requires:	xlockmore
 Recommends:	%{name}-themes
 Recommends:	xterm
 Recommends:	udisks-glue
@@ -95,12 +93,15 @@ rm -f po/en.* #- en is not a valid locale
 chmod -R a+rX themes
 find themes -type f | xargs chmod a-x
 
+#fix build with clang for arm and i686, https://github.com/bbidulock/icewm/issues/340
+sed -i 's|windowList\[0\]|windowList[0U]|'  src/icesh.cc
+
 %build
 # Build with Clang fail on i686 and ARMv7. Switch this two arch to GCC for now. (penguin)
-%ifarch %{ix86} %{arm}
-export CC=gcc
-export CXX=g++
-%endif
+#ifarch %{ix86} %{arm}
+#export CC=gcc
+#export CXX=g++
+#endif
 %cmake \
 	-DCFGDIR="%{_sysconfdir}/%{name}" \
 	-DENABLE_LTO:BOOL=ON
