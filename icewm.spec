@@ -3,7 +3,7 @@
 
 Name:		icewm
 Summary:	X11 Window Manager
-Version:	1.5.4
+Version:	1.5.3
 Release:	1
 License:	LGPL
 Group:		Graphical desktop/Icewm
@@ -94,7 +94,7 @@ chmod -R a+rX themes
 find themes -type f | xargs chmod a-x
 
 #fix build with clang for arm and i686, https://github.com/bbidulock/icewm/issues/340
-#sed -i 's|windowList\[0\]|windowList[0U]|'  src/icesh.cc
+sed -i 's|windowList\[0\]|windowList[0U]|'  src/icesh.cc
 
 %build
 
