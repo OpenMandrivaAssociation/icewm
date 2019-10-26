@@ -3,13 +3,13 @@
 
 Name:		icewm
 Summary:	X11 Window Manager
-Version:	1.5.3
+Version:	1.6.2
 Release:	1
 License:	LGPL
 Group:		Graphical desktop/Icewm
 
 URL:		https://github.com/ice-wm/icewm
-Source0:	https://github.com/ice-wm/icewm/releases/download/%{version}/icewm-%{version}.tar.xz
+Source0:	https://github.com/ice-wm/icewm/releases/download/%{version}/icewm-%{version}.tar.lz
 Source2:	themes.tar.lzma
 Source5:	icewm-16.png
 Source6:	icewm-32.png
