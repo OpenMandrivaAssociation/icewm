@@ -47,6 +47,7 @@ BuildRequires:	pkgconfig(gio-unix-2.0)
 BuildRequires:	pkgconfig(ao)
 BuildRequires:	pkgconfig(alsa)
 BuildRequires:	pkgconfig(xcomposite)
+BuildRequires:	pkgconfig(xdamage)
 BuildRequires:	asciidoc
 Requires:	desktop-common-data
 Requires:	%{name}-i18n >= %{EVRD}
