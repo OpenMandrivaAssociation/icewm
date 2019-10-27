@@ -23,7 +23,7 @@ Source13:	xeditor.sh
 Patch1:		icewm-1.2.26-xcin_bindy.patch
 Patch2:		icewm-1.2.13pre3-defaultfont.patch
 #Patch3:		icewm-1.5.2-buildfix.patch
-Patch4:		icewm-1.3-dev-winoptions.patch
+#Patch4:		icewm-1.3-dev-winoptions.patch
 Patch10:	icewm-desktop.patch
 Patch25:	icewm-1.3.0-fix-focusing-on-raise.patch
 Patch26:	icewm-1.4.2-mga-default-pref.patch
