@@ -173,6 +173,7 @@ rm %{buildroot}%{_bindir}/icewm-set-gnomewm
 %{_iconsdir}/%{name}.png
 %{_miconsdir}/%{name}.png
 %{_liconsdir}/%{name}.png
+%{_mandir}/man1/*
 
 %files themes -f theme.list
 
