@@ -28,6 +28,7 @@ Patch10:	icewm-desktop.patch
 Patch25:	icewm-1.3.0-fix-focusing-on-raise.patch
 Patch26:	icewm-1.4.2-mga-default-pref.patch
 BuildRequires:	cmake
+BuildRequires:	lzip
 BuildRequires:	gettext-devel
 BuildRequires:	pkgconfig(fribidi)
 BuildRequires:  pkgconfig(sm)
