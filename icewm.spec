@@ -26,7 +26,7 @@ Patch2:		icewm-1.2.13pre3-defaultfont.patch
 #Patch4:		icewm-1.3-dev-winoptions.patch
 Patch10:	icewm-desktop.patch
 #Patch25:	icewm-1.3.0-fix-focusing-on-raise.patch
-Patch26:	icewm-1.4.2-mga-default-pref.patch
+#Patch26:	icewm-1.4.2-mga-default-pref.patch
 BuildRequires:	cmake
 BuildRequires:	lzip
 BuildRequires:	gettext-devel
