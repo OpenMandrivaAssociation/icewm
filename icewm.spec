@@ -3,13 +3,13 @@
 
 Name:		icewm
 Summary:	X11 Window Manager
-Version:	1.5.3
+Version:	1.6.2
 Release:	1
 License:	LGPL
 Group:		Graphical desktop/Icewm
 
 URL:		https://github.com/ice-wm/icewm
-Source0:	https://github.com/ice-wm/icewm/releases/download/%{version}/icewm-%{version}.tar.xz
+Source0:	https://github.com/ice-wm/icewm/releases/download/%{version}/icewm-%{version}.tar.lz
 Source2:	themes.tar.lzma
 Source5:	icewm-16.png
 Source6:	icewm-32.png
@@ -23,11 +23,12 @@ Source13:	xeditor.sh
 Patch1:		icewm-1.2.26-xcin_bindy.patch
 Patch2:		icewm-1.2.13pre3-defaultfont.patch
 #Patch3:		icewm-1.5.2-buildfix.patch
-Patch4:		icewm-1.3-dev-winoptions.patch
+#Patch4:		icewm-1.3-dev-winoptions.patch
 Patch10:	icewm-desktop.patch
-Patch25:	icewm-1.3.0-fix-focusing-on-raise.patch
-Patch26:	icewm-1.4.2-mga-default-pref.patch
+#Patch25:	icewm-1.3.0-fix-focusing-on-raise.patch
+#Patch26:	icewm-1.4.2-mga-default-pref.patch
 BuildRequires:	cmake
+BuildRequires:	lzip
 BuildRequires:	gettext-devel
 BuildRequires:	pkgconfig(fribidi)
 BuildRequires:  pkgconfig(sm)
@@ -45,6 +46,10 @@ BuildRequires:	pkgconfig(gio-2.0)
 BuildRequires:	pkgconfig(gio-unix-2.0)
 BuildRequires:	pkgconfig(ao)
 BuildRequires:	pkgconfig(alsa)
+BuildRequires:	pkgconfig(xcomposite)
+BuildRequires:	pkgconfig(xdamage)
+BuildRequires:	pkgconfig(gdk-pixbuf-2.0)
+BuildRequires:	pkgconfig(gdk-pixbuf-xlib-2.0)
 BuildRequires:	asciidoc
 Requires:	desktop-common-data
 Requires:	%{name}-i18n >= %{EVRD}
@@ -97,6 +102,7 @@ find themes -type f | xargs chmod a-x
 sed -i 's|windowList\[0\]|windowList[0U]|'  src/icesh.cc
 
 %build
+sed -i 's/ IceWM.jpg//' lib/CMakeLists.txt
 
 %cmake \
 	-DCFGDIR="%{_sysconfdir}/%{name}" \
@@ -128,6 +134,10 @@ perl -pi -e "s!# DesktopBackgroundColor=.*!DesktopBackgroundColor=\"\"!" %buildr
 # Get rid of useless stuff
 rm %{buildroot}%{_bindir}/icewm-set-gnomewm
 
+
+# Broken, so disable for now. See more here: https://issues.openmandriva.org/show_bug.cgi?id=2552 (penguin)
+rm -f %buildroot/%_datadir/xsessions/%name.desktop
+
 %find_lang %{name}
 
 %files
@@ -149,7 +159,7 @@ rm %{buildroot}%{_bindir}/icewm-set-gnomewm
 %dir %{_datadir}/%{name}/taskbar
 %dir %{_datadir}/%{name}/mailbox
 %{_sysconfdir}/menu.d/%{name}
-%{_datadir}/xsessions/%{name}.desktop
+#{_datadir}/xsessions/%{name}.desktop
 %{_datadir}/xsessions/%{name}-session.desktop
 %{_bindir}/starticewm
 %{_bindir}/icewm-menu-fdo
@@ -167,6 +177,7 @@ rm %{buildroot}%{_bindir}/icewm-set-gnomewm
 %{_iconsdir}/%{name}.png
 %{_miconsdir}/%{name}.png
 %{_liconsdir}/%{name}.png
+%{_mandir}/man*/*
 
 %files themes -f theme.list
 

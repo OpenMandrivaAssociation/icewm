@@ -1,32 +1,29 @@
-diff -up icewm-1.5.2/lib/keys.in.6~ icewm-1.5.2/lib/keys.in
---- icewm-1.5.2/lib/keys.in.6~	2019-03-13 20:14:32.718757710 +0100
-+++ icewm-1.5.2/lib/keys.in	2019-03-13 20:16:09.556307666 +0100
-@@ -9,9 +9,9 @@
- # You'll have to omit XK_ prefixs and to replace XF86XK_ prefixes by
+--- icewm-1.5.4/lib/keys.in.mgapref	2019-05-03 22:26:47.791676913 +0300
++++ icewm-1.5.4/lib/keys.in	2019-05-03 22:29:41.768184890 +0300
+@@ -10,8 +10,8 @@
  # XF86. Valid modifiers are Alt, Ctrl, Shift, Meta, Super and Hyper.
  #
--key "Alt+Ctrl+t"			xterm
-+key "Alt+Ctrl+t"			xvt
- key "Alt+Ctrl+b"			xdg-open about:blank
--key "Alt+Ctrl+s"			xdg-open http://www.google.com
-+key "Alt+Ctrl+s"			xdg-open http://yandex.com
+ key "Alt+Ctrl+t"			xterm
+-key "Alt+Ctrl+b"			xdg-open about:blank
+-key "Alt+Ctrl+s"			xdg-open https://www.google.com
++key "Alt+Ctrl+b"			www-browser about:blank
++key "Alt+Ctrl+s"			www-browser https://www.google.com
  
  key "Super+KP_Subtract"			amixer sset Master 5%-
  key "Super+KP_Add"			amixer sset Master 5%+
-@@ -29,8 +29,8 @@ key "XF86AudioLowerVolume"		amixer sset
+@@ -28,8 +28,8 @@
+ key "XF86AudioLowerVolume"		amixer sset Master 5%-
  key "XF86AudioRaiseVolume"		amixer sset Master 5%+
  key "XF86AudioMute"			amixer sset Master toggle
- key "XF86HomePage"			xdg-open about:blank
--key "XF86Search"			xdg-open http://www.google.com
-+key "XF86Search"			xdg-open http://yandex.com
+-key "XF86HomePage"			xdg-open about:blank
+-key "XF86Search"			xdg-open https://www.google.com
++key "XF86HomePage"			www-browser about:blank
++key "XF86Search"			www-browser https://www.google.com
  key "XF86Eject"				eject
--key "XF86Calculator"			/bin/sh -c "gnome-calculator || xcalc || ( type bc >/dev/null 2>&1 && xterm -e bc -l)"
-+key "XF86Calculator"			/bin/sh -c "kcalc || gnome-calculator || xcalc || ( type bc >/dev/null 2>&1 && xvt -e bc -l)"
+ key "XF86Calculator"			/bin/sh -c "gnome-calculator || xcalc || ( type bc >/dev/null 2>&1 && xterm -e bc -l)"
  
- switchkey "Super+p"			icewm-menu-xrandr
-diff -up icewm-1.5.2/lib/toolbar.in.6~ icewm-1.5.2/lib/toolbar.in
---- icewm-1.5.2/lib/toolbar.in.6~	2019-02-04 21:05:00.000000000 +0100
-+++ icewm-1.5.2/lib/toolbar.in	2019-03-13 20:14:32.718757710 +0100
+--- icewm-1.5.4/lib/toolbar.in.mgapref	2019-04-23 23:12:00.000000000 +0300
++++ icewm-1.5.4/lib/toolbar.in	2019-05-03 22:26:47.791676913 +0300
 @@ -4,6 +4,8 @@
  # since modifications to this file will be discarded when you
  # (re)install icewm.
@@ -38,28 +35,27 @@ diff -up icewm-1.5.2/lib/toolbar.in.6~ icewm-1.5.2/lib/toolbar.in
 +prog Browser web_browser_section.png www-browser
 +prog MCC drakconf.png mcc
  
-diff -up icewm-1.5.2/src/default.h.6~ icewm-1.5.2/src/default.h
---- icewm-1.5.2/src/default.h.6~	2019-03-13 20:14:32.718757710 +0100
-+++ icewm-1.5.2/src/default.h	2019-03-13 20:18:12.210256612 +0100
-@@ -171,7 +171,7 @@ XIV(int, netWorkAreaBehaviour,
+--- icewm-1.5.4/src/default.h.mgapref	2019-04-23 23:12:00.000000000 +0300
++++ icewm-1.5.4/src/default.h	2019-05-03 22:26:47.791676913 +0300
+@@ -171,7 +171,7 @@
  
  XSV(const char *, acpiIgnoreBatteries,          0)
  XSV(const char *, mailBoxPath,                  0)
 -XSV(const char *, mailCommand,                  "xterm -name mutt -e mutt")
-+XSV(const char *, mailCommand,                  "xvt -name mutt -e mutt")
++XSV(const char *, mailCommand,                  "xvt -T mutt -e mutt")
  XSV(const char *, mailClassHint,                "mutt.XTerm")
  XSV(const char *, newMailCommand,               0)
  XSV(const char *, lockCommand,                  0)
-@@ -179,7 +179,7 @@ XSV(const char *, clockCommand,
+@@ -179,7 +179,7 @@
  XSV(const char *, clockClassHint,               "icewm.XClock")
  XSV(const char *, runDlgCommand,                0)
  XSV(const char *, openCommand,                  0)
 -XSV(const char *, terminalCommand,              "xterm -hold")
-+XSV(const char *, terminalCommand,              "xvt")
++XSV(const char *, terminalCommand,              "xvt -hold")
  XSV(const char *, logoutCommand,                0)
  XSV(const char *, logoutCancelCommand,          0)
  #if defined(__linux__)
-@@ -196,7 +196,7 @@ XIV(int, taskBarCPUDelay,
+@@ -196,15 +196,15 @@
  XIV(int, taskBarMEMDelay,                       500)
  XIV(int, taskBarNetSamples,                     20)
  XIV(int, taskBarNetDelay,                       500)
@@ -68,4 +64,13 @@ diff -up icewm-1.5.2/src/default.h.6~ icewm-1.5.2/src/default.h
  XSV(const char *, cpuClassHint,                 "top.XTerm")
  XIV(bool, cpuCombine,                           true)
  
-diff -up icewm-1.5.2/src/yprefs.h.6~ icewm-1.5.2/src/yprefs.h
+ #ifdef __linux__
+-XSV(const char *, netCommand,                   "xterm -name 'ss' -title 'Socket Statistics' -hold -e sh -c 'which ss > /dev/null && watch -t ss -putswl || netstat -c'")
++XSV(const char *, netCommand,                   "xvt -T 'Socket Statistics' -hold -e sh -c 'which ss > /dev/null && watch -t ss -putswl || netstat -c'")
+ XSV(const char *, netClassHint,                 "ss.XTerm")
+ #else
+-XSV(const char *, netCommand,                   "xterm -name netstat -title 'Network Status' -hold -e netstat -c")
++XSV(const char *, netCommand,                   "xvt -T 'Network Status' -hold -e netstat -c")
+ XSV(const char *, netClassHint,                 "netstat.XTerm")
+ #endif
+ 
