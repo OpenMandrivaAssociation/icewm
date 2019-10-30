@@ -134,7 +134,8 @@ perl -pi -e "s!# DesktopBackgroundColor=.*!DesktopBackgroundColor=\"\"!" %buildr
 # Get rid of useless stuff
 rm %{buildroot}%{_bindir}/icewm-set-gnomewm
 
-#disable for now broken
+
+# Broken, so disable for now. See more here: https://issues.openmandriva.org/show_bug.cgi?id=2552 (penguin)
 rm -f %buildroot/%_datadir/xsessions/%name.desktop
 
 %find_lang %{name}
