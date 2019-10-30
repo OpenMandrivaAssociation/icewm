@@ -134,6 +134,9 @@ perl -pi -e "s!# DesktopBackgroundColor=.*!DesktopBackgroundColor=\"\"!" %buildr
 # Get rid of useless stuff
 rm %{buildroot}%{_bindir}/icewm-set-gnomewm
 
+#disable for now broken
+rm %{buildroot}%{_bindir}/icewm
+
 %find_lang %{name}
 
 %files
@@ -144,7 +147,7 @@ rm %{buildroot}%{_bindir}/icewm-set-gnomewm
 %{_bindir}/icesound
 %{_bindir}/icesh
 %{_bindir}/icehelp
-%{_bindir}/icewm
+#{_bindir}/icewm
 %{_bindir}/icewm-menu-xrandr
 %{_bindir}/icewm-session
 %{_bindir}/icewmbg
