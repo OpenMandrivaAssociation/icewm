@@ -1,5 +1,6 @@
 %define light_apps          icewm icesh icewmbg icewmhint icewm-session icewmtray
-%define default_apps        %{light_apps} icehelp
+%define default_apps        %{light_apps} icehelp]
+%define _disable_lto 1
 
 Name:		icewm
 Summary:	X11 Window Manager
