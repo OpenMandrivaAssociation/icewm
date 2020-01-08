@@ -103,6 +103,8 @@ find themes -type f | xargs chmod a-x
 sed -i 's|windowList\[0\]|windowList[0U]|'  src/icesh.cc
 
 %build
+export CC=gcc
+export CXX=g++
 sed -i 's/ IceWM.jpg//' lib/CMakeLists.txt
 
 %cmake \
