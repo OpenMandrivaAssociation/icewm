@@ -1,0 +1,11 @@
+diff -up icewm-1.6.4/src/CMakeLists.txt icewm-1.6.4/src/CMakeLists.txt-new
+--- icewm-1.6.4/src/CMakeLists.txt      2020-01-07 21:27:00.000000000 +0100
++++ icewm-1.6.4/src/CMakeLists.txt-new  2020-01-08 19:31:29.847025808 +0100
+@@ -505,7 +505,7 @@ ADD_EXECUTABLE(icewmhint${EXEEXT} icewmh
+ target_compile_options(icewmhint${EXEEXT} PUBLIC ${CXXFLAGS_COMMON} ${icewm_pc_flags})
+ TARGET_LINK_LIBRARIES(icewmhint${EXEEXT} ${xext_LDFLAGS} ${x11_LDFLAGS} ${nls_LIBS} ${EXTRA_LIBS})
+ 
+-ADD_EXECUTABLE(icesh${EXEEXT} icesh.cc misc.cc mstring.cc ref.cc yarray.cc)
++ADD_EXECUTABLE(icesh${EXEEXT} icesh.cc misc.cc mstring.cc ref.cc yarray.cc ytimer.cc)
+ target_compile_options(icesh${EXEEXT} PUBLIC ${CXXFLAGS_COMMON} ${icewm_pc_flags})
+ TARGET_LINK_LIBRARIES(icesh${EXEEXT} ${xext_LDFLAGS} ${xrandr_LDFLAGS} ${xinerama_LDFLAGS} ${x11_LDFLAGS} ${nls_LIBS} ${EXTRA_LIBS})

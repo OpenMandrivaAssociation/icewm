@@ -1,9 +1,9 @@
 %define light_apps          icewm icesh icewmbg icewmhint icewm-session icewmtray
-%define default_apps        %{light_apps} icehelp
+%define default_apps        %{light_apps} icehelp]
 
 Name:		icewm
 Summary:	X11 Window Manager
-Version:	1.6.3
+Version:	1.6.4
 Release:	1
 License:	LGPL
 Group:		Graphical desktop/Icewm
@@ -22,11 +22,8 @@ Source13:	xeditor.sh
 # fix bindkey conflict xcin
 Patch1:		icewm-1.2.26-xcin_bindy.patch
 Patch2:		icewm-1.2.13pre3-defaultfont.patch
-#Patch3:		icewm-1.5.2-buildfix.patch
-#Patch4:		icewm-1.3-dev-winoptions.patch
 Patch10:	icewm-desktop.patch
-#Patch25:	icewm-1.3.0-fix-focusing-on-raise.patch
-#Patch26:	icewm-1.4.2-mga-default-pref.patch
+Patch27:	icewm-1.6.4-fix-cmake-openmandriva.patch
 BuildRequires:	cmake
 BuildRequires:	lzip
 BuildRequires:	gettext-devel
