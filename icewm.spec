@@ -3,7 +3,7 @@
 
 Name:		icewm
 Summary:	X11 Window Manager
-Version:	1.6.4
+Version:	1.6.5
 Release:	1
 License:	LGPL
 Group:		Graphical desktop/Icewm
@@ -23,7 +23,7 @@ Source13:	xeditor.sh
 Patch1:		icewm-1.2.26-xcin_bindy.patch
 Patch2:		icewm-1.2.13pre3-defaultfont.patch
 Patch10:	icewm-desktop.patch
-Patch27:	icewm-1.6.4-fix-cmake-openmandriva.patch
+#Patch27:	icewm-1.6.4-fix-cmake-openmandriva.patch
 BuildRequires:	cmake
 BuildRequires:	lzip
 BuildRequires:	gettext-devel
