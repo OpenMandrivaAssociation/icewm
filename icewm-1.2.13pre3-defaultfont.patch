@@ -1,9 +1,9 @@
-diff -up icewm-1.5.2/src/yconfig.h.defaultfont icewm-1.5.2/src/yconfig.h
---- icewm-1.5.2/src/yconfig.h.defaultfont	2019-03-13 19:59:55.122094368 +0100
-+++ icewm-1.5.2/src/yconfig.h	2019-03-13 20:09:49.045348840 +0100
-@@ -30,23 +30,16 @@
- #ifndef __YCONFIG_H__
- #define __YCONFIG_H__
+diff -uraN icewm-1.9.0/src/yconfig.h omv-icewm-1.9.0/src/yconfig.h
+--- icewm-1.9.0/src/yconfig.h	2020-10-29 20:23:00.000000000 +0100
++++ omv-icewm-1.9.0/src/yconfig.h	2020-10-31 21:19:50.981032089 +0100
+@@ -32,23 +32,17 @@
+ 
+ #include <X11/X.h>
  
 -#ifdef CONFIG_XFREETYPE
 -#define FONT(pt) "-*-sans-medium-r-*-*-*-" #pt "-*-*-*-*-*-*"
@@ -11,6 +11,7 @@ diff -up icewm-1.5.2/src/yconfig.h.defaultfont icewm-1.5.2/src/yconfig.h
 -#define TTFONT(pt) "-*-monospace-medium-r-*-*-*-" #pt "-*-*-*-*-*-*"
 -#define BOLDTTFONT(pt) "-*-monospace-bold-r-*-*-*-" #pt "-*-*-*-*-*-*"
 -#else
++
  #ifdef FONTS_ADOBE
 -#define FONT(pt) "-b&h-lucida-medium-r-*-*-*-" #pt "-*-*-*-*-*-*"
 -#define BOLDFONT(pt) "-b&h-lucida-bold-r-*-*-*-" #pt "-*-*-*-*-*-*"
