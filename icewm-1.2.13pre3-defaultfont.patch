@@ -31,5 +31,4 @@ diff -uraN icewm-1.9.0/src/yconfig.h omv-icewm-1.9.0/src/yconfig.h
 +#define TTFONT(pt) "-adobe-courier-medium-r-*-*-*-" #pt "-*-*-*-*-*-*,-*--16-*"
 +#define BOLDTTFONT(pt) "-adobe-courier-bold-r-*-*-*-" #pt "-*-*-*-*-*-*,-*--16-*"
  #endif
- #endif
  
