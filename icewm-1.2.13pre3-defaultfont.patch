@@ -1,7 +1,7 @@
 diff -uraN icewm-1.9.0/src/yconfig.h omv-icewm-1.9.0/src/yconfig.h
 --- icewm-1.9.0/src/yconfig.h	2020-10-29 20:23:00.000000000 +0100
-+++ omv-icewm-1.9.0/src/yconfig.h	2020-10-31 20:44:06.920772788 +0100
-@@ -32,22 +32,17 @@
++++ omv-icewm-1.9.0/src/yconfig.h	2020-10-31 21:19:50.981032089 +0100
+@@ -32,23 +32,17 @@
  
  #include <X11/X.h>
  
@@ -26,9 +26,11 @@ diff -uraN icewm-1.9.0/src/yconfig.h omv-icewm-1.9.0/src/yconfig.h
 -#define BOLDFONT(pt) "-adobe-helvetica-bold-r-*-*-*-" #pt "-*-*-*-*-*-*"
 -#define TTFONT(pt) "-adobe-courier-medium-r-*-*-*-" #pt "-*-*-*-*-*-*"
 -#define BOLDTTFONT(pt) "-adobe-courier-bold-r-*-*-*-" #pt "-*-*-*-*-*-*"
+-#endif
 +#define FONT(pt) "-misc-fixed-medium-r-normal-*-*-" #pt "-*-*-*-*-16-*"
 +#define BOLDFONT(pt) "-misc-fixed-bold-r-normal-*-*-" #pt "-*-*-*-*-16-*"
 +#define TTFONT(pt) "-adobe-courier-medium-r-*-*-*-" #pt "-*-*-*-*-*-*,-*--16-*"
 +#define BOLDTTFONT(pt) "-adobe-courier-bold-r-*-*-*-" #pt "-*-*-*-*-*-*,-*--16-*"
  #endif
  
+ #define kfShift  1
