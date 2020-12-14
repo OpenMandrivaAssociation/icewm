@@ -47,6 +47,7 @@ BuildRequires:	pkgconfig(xcomposite)
 BuildRequires:	pkgconfig(xdamage)
 BuildRequires:	pkgconfig(gdk-pixbuf-2.0)
 BuildRequires:	pkgconfig(gdk-pixbuf-xlib-2.0)
+BuildRequires:	pkgconfig(imlib2)
 BuildRequires:	asciidoc
 Requires:	desktop-common-data
 Requires:	%{name}-i18n >= %{EVRD}
