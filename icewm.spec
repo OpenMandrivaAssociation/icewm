@@ -49,6 +49,8 @@ BuildRequires:	pkgconfig(gdk-pixbuf-2.0)
 BuildRequires:	pkgconfig(gdk-pixbuf-xlib-2.0)
 BuildRequires:	pkgconfig(imlib2)
 BuildRequires:	asciidoc
+BuildRequires:	asciidoctor
+BuildRequires:	perl-Pod-Html
 Requires:	desktop-common-data
 Requires:	%{name}-i18n >= %{EVRD}
 Recommends:	%{name}-themes
@@ -143,6 +145,7 @@ rm -f %buildroot/%_datadir/xsessions/%name.desktop
 %doc README.md AUTHORS TODO THANKS NEWS
 %doc doc/icewm.adoc
 %doc %{_docdir}/%{name}/icewm.html
+%doc %{_docdir}/icewm/*
 %{_bindir}/icesound
 %{_bindir}/icesh
 %{_bindir}/icehelp
