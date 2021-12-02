@@ -21,7 +21,7 @@ Source13:	xeditor.sh
 
 # fix bindkey conflict xcin
 Patch1:		icewm-1.2.26-xcin_bindy.patch
-Patch2:		icewm-1.2.13pre3-defaultfont.patch
+#Patch2:		icewm-1.2.13pre3-defaultfont.patch
 Patch10:	icewm-desktop.patch
 #Patch27:	icewm-1.6.4-fix-cmake-openmandriva.patch
 BuildRequires:	cmake
