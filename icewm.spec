@@ -144,7 +144,6 @@ rm -f %buildroot/%_datadir/xsessions/%name.desktop
 %license COPYING
 %doc README.md AUTHORS TODO THANKS NEWS
 %doc doc/icewm.adoc
-%doc %{_docdir}/%{name}/icewm.html
 %doc %{_docdir}/icewm/*
 %{_bindir}/icesound
 %{_bindir}/icesh
