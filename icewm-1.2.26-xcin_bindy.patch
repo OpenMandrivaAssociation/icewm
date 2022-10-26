@@ -1,6 +1,7 @@
---- icewm-1.2.26/src/bindkey.h.pix	2006-04-16 18:12:31.000000000 +0200
-+++ icewm-1.2.26/src/bindkey.h	2006-04-27 09:12:30.000000000 +0200
-@@ -53,18 +53,18 @@
+diff -uraN icewm-3.1.0/src/bindkey.h omv-icewm-3.1.0/src/bindkey.h
+--- icewm-3.1.0/src/bindkey.h	2022-10-24 01:39:08.000000000 +0200
++++ omv-icewm-3.1.0/src/bindkey.h	2022-10-26 18:08:12.375017100 +0200
+@@ -62,18 +62,18 @@
  #define defgKeySysWorkspacePrevTakeWin  XK_Left, kfAlt+kfCtrl+kfShift, "Alt+Ctrl+Shift+Left"
  #define defgKeySysWorkspaceNextTakeWin  XK_Right, kfAlt+kfCtrl+kfShift, "Alt+Ctrl+Shift+Right"
  #define defgKeySysWorkspaceLastTakeWin  XK_Down, kfAlt+kfCtrl+kfShift, "Alt+Ctrl+Shift+Down"
@@ -14,8 +15,8 @@
 -#define defgKeySysWorkspace8            '8', kfAlt+kfCtrl, "Alt+Ctrl+8"
 -#define defgKeySysWorkspace9            '9', kfAlt+kfCtrl, "Alt+Ctrl+9"
 -#define defgKeySysWorkspace10           '0', kfAlt+kfCtrl, "Alt+Ctrl+0"
--#define defgKeySysWorkspace11           '-', kfAlt+kfCtrl, "Alt+Ctrl+bracketleft"
--#define defgKeySysWorkspace12           '=', kfAlt+kfCtrl, "Alt+Ctrl+bracketright"
+-#define defgKeySysWorkspace11           '-', kfAlt+kfCtrl, "Alt+Ctrl+minus"
+-#define defgKeySysWorkspace12           '=', kfAlt+kfCtrl, "Alt+Ctrl+equal"
 +#define defgKeySysWorkspace1            '1', kfAlt, "Alt+1"
 +#define defgKeySysWorkspace2            '2', kfAlt, "Alt+2"
 +#define defgKeySysWorkspace3            '3', kfAlt, "Alt+3"
