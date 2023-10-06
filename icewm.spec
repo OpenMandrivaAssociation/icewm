@@ -94,7 +94,7 @@ This is translation files for icewm window manager.
 %prep
 %autosetup -p1 -a 2 -a 9 -n %{name}-%{version}
 
-rm -f po/en.* #- en is not a valid locale
+#rm -f po/en.* #- en is not a valid locale
 
 chmod -R a+rX themes
 find themes -type f | xargs chmod a-x
