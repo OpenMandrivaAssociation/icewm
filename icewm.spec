@@ -51,6 +51,7 @@ BuildRequires:	pkgconfig(imlib2)
 BuildRequires:	asciidoc
 BuildRequires:	asciidoctor
 BuildRequires:	perl-Pod-Html
+BuildRequires:	locales-extra-charsets
 Requires:	desktop-common-data
 Requires:	%{name}-i18n >= %{EVRD}
 Recommends:	%{name}-themes
