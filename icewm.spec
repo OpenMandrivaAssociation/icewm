@@ -36,6 +36,7 @@ BuildRequires:	pkgconfig(xext)
 BuildRequires:	pkgconfig(xft)
 BuildRequires:	pkgconfig(xinerama)
 BuildRequires:  pkgconfig(xrandr)
+BuildRequires:	pkgconfig(xres)
 #BuildRequires:  linuxdoc-tools
 BuildRequires:  pkgconfig(xcursor)
 BuildRequires:	pkgconfig(libjpeg)
@@ -109,7 +110,9 @@ sed -i 's/ IceWM.jpg//' lib/CMakeLists.txt
 
 %cmake \
 	-DCFGDIR="%{_sysconfdir}/%{name}" \
-	-DENABLE_LTO:BOOL=ON
+	-DENABLE_LTO:BOOL=ON \
+	-DCONFIG_LIBPNG=ON \
+	-DCONFIG_LIBRSVG=ON
 
 %make_build
 
