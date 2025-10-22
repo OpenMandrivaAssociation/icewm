@@ -3,7 +3,7 @@
 
 Name:		icewm
 Summary:	X11 Window Manager
-Version:	3.6.0
+Version:	3.9.0
 Release:	1
 License:	LGPL
 Group:		Graphical desktop/Icewm
@@ -20,10 +20,12 @@ Source12:	icewm-menu-xdg
 Source13:	xeditor.sh
 
 # fix bindkey conflict xcin
-Patch1:		icewm-1.2.26-xcin_bindy.patch
+#Patch1:		icewm-1.2.26-xcin_bindy.patch
 #Patch2:		icewm-1.2.13pre3-defaultfont.patch
 Patch10:	icewm-desktop.patch
 #Patch27:	icewm-1.6.4-fix-cmake-openmandriva.patch
+Patch11:	cmake-locale-install.patch
+
 BuildRequires:	cmake
 BuildRequires:	lzip
 BuildRequires:	gettext-devel
@@ -34,8 +36,9 @@ BuildRequires:	pkgconfig(xext)
 BuildRequires:	pkgconfig(xft)
 BuildRequires:	pkgconfig(xinerama)
 BuildRequires:  pkgconfig(xrandr)
-BuildRequires:  linuxdoc-tools
-BuildRequires:	pkgconfig(xpm)
+BuildRequires:	pkgconfig(xres)
+#BuildRequires:  linuxdoc-tools
+BuildRequires:  pkgconfig(xcursor)
 BuildRequires:	pkgconfig(libjpeg)
 BuildRequires:	pkgconfig(libpng)
 BuildRequires:	pkgconfig(sndfile)
@@ -94,7 +97,7 @@ This is translation files for icewm window manager.
 %prep
 %autosetup -p1 -a 2 -a 9 -n %{name}-%{version}
 
-rm -f po/en.* #- en is not a valid locale
+#rm -f po/en.* #- en is not a valid locale
 
 chmod -R a+rX themes
 find themes -type f | xargs chmod a-x
@@ -107,7 +110,9 @@ sed -i 's/ IceWM.jpg//' lib/CMakeLists.txt
 
 %cmake \
 	-DCFGDIR="%{_sysconfdir}/%{name}" \
-	-DENABLE_LTO:BOOL=ON
+	-DENABLE_LTO:BOOL=ON \
+	-DCONFIG_LIBPNG=ON \
+	-DCONFIG_LIBRSVG=ON
 
 %make_build
 
