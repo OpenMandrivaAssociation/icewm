@@ -34,8 +34,8 @@ BuildRequires:	pkgconfig(xext)
 BuildRequires:	pkgconfig(xft)
 BuildRequires:	pkgconfig(xinerama)
 BuildRequires:  pkgconfig(xrandr)
-BuildRequires:  linuxdoc-tools
-BuildRequires:	pkgconfig(xpm)
+#BuildRequires:  linuxdoc-tools
+BuildRequires:  pkgconfig(xcursor)
 BuildRequires:	pkgconfig(libjpeg)
 BuildRequires:	pkgconfig(libpng)
 BuildRequires:	pkgconfig(sndfile)
