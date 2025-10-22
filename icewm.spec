@@ -24,6 +24,8 @@ Source13:	xeditor.sh
 #Patch2:		icewm-1.2.13pre3-defaultfont.patch
 Patch10:	icewm-desktop.patch
 #Patch27:	icewm-1.6.4-fix-cmake-openmandriva.patch
+Patch11:	cmake-locale-install.patch
+
 BuildRequires:	cmake
 BuildRequires:	lzip
 BuildRequires:	gettext-devel
