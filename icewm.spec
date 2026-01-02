@@ -26,6 +26,7 @@ Patch10:	icewm-desktop.patch
 #Patch27:	icewm-1.6.4-fix-cmake-openmandriva.patch
 Patch11:	cmake-locale-install.patch
 
+BuildRequires:	make
 BuildRequires:	cmake
 BuildRequires:	lzip
 BuildRequires:	gettext-devel
