@@ -3,7 +3,7 @@
 
 Name:		icewm
 Summary:	X11 Window Manager
-Version:	4.0.0
+Version:	4.1.0
 Release:	1
 License:	LGPL
 Group:		Graphical desktop/Icewm
